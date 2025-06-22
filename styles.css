@@ -234,12 +234,26 @@ main{
    margin-bottom: 1rem;
    padding: 1rem;
    text-align: justify;
+
+   img{
+       width: 100%;
+       max-height: 20rem;
+       border-radius: 20px;
+       object-fit: cover;
+   }
 }
 
 #Projects{
    background-color: rgb(248, 248, 248);
    margin-bottom: 1rem;
    padding: 1rem;
+
+   img{
+       width: 100%;
+       max-height: 20rem;
+         object-fit: cover;
+       border-radius: 20px;
+   }
 }
 .techstack-list{
    list-style-type: none;
@@ -359,6 +373,14 @@ h2{
       gap: 1rem;
 }
 
+#contacts{   img{
+       width: 70%;
+       object-fit: cover;
+       max-height: 450px;
+       margin: 0 auto 2rem;
+       display: block;
+       border-radius: 30px;
+   }}
 .contact-wrapper{
    display: flex;
    flex-flow: row nowrap;
