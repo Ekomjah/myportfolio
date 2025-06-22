@@ -37,6 +37,9 @@ body{
    }
 }
 
+#about, #Projects{
+   border-radius: 30px;
+}
 .nav-wrapper{
    width: 100%;
    position: fixed;
@@ -87,14 +90,15 @@ nav ul{
    display: block;
 }
 
-header > *{
-    font-size: clamp(0.5rem, 0.5rem + 1svw, 1.5rem);
-}
+ [id] {
+    scroll-margin-top: 90px;
+  }
+
 
 header{
    display: flex;
    align-items: center;
-   flex-flow: row wrap;
+   flex-flow: row nowrap;
    justify-content: center;
    width: 100%;
    gap: 4em;
@@ -113,6 +117,7 @@ header{
    text-align: center;
    font-family: "Open Sans", sans-serif;
    margin: 0;
+   font-size: 1.9rem;
    color: rgb(44, 3, 44);
 }
 
@@ -138,7 +143,7 @@ header{
 
 .job-desc{
    text-align: center;
-   font-size: 2rem;
+   font-size: 1.3rem;
    color: var(--alttextColor); 
    font-family: "Open Sans", sans-serif;
    font-weight: bolder;
@@ -154,6 +159,7 @@ header{
       font-size: 1.3rem;
       text-align: justify;
       grid-column: span 2;
+      margin: 0.8rem 0;
    }
 
    p:nth-of-type(3){
@@ -162,11 +168,43 @@ header{
 
    .resume{
       grid-column:  2 / 3;
-      
+      border: 1px solid;
+      display: flex;
+      margin: 0 3rem;
+      flex-flow: column nowrap;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+
+
       p{text-align: center;
       color: black;
       }
+
+      a{
+        
+         text-decoration: none;
+
+         p{
+             color: blue;
+         }
+
+         p:hover{
+            text-decoration: underline;
+         }
+
+         p:active{
+            text-decoration: underline;
+         }
+      }
+
+   /* img{
+      display: block;
    }
+         a p{
+            text-decoration: none;
+         } */
+      }
 }
 
 /* .job-desc::after{
@@ -273,7 +311,7 @@ h2{
 }
 
 .post-content{
-    padding:20px;
+    padding: 1rem;
    
 }
 
@@ -286,7 +324,7 @@ h2{
 .post-content a{
     text-decoration: none;
     background-color: rgb(63, 58, 58);
-    padding: 10px;
+    padding: 0.5rem;
     font-weight: bold;
     font-size: 1rem;
     display: inline-block;
@@ -295,7 +333,6 @@ h2{
 
 .post-content a:link{
        color: whitesmoke;
-       margin:10px 0;
 }
 
 .post-content a:visited{
@@ -360,18 +397,10 @@ footer{
    padding: 1rem;
 }
 
-@media (max-width:750px){
+@media (max-width:800px){
    html{
       font-size: 10px;
    }
-   header{
-      margin-block-start: 5em;
-
-      img{
-         width: 100px;
-      }
-   }
-   
 }
 
 @media (max-width:580px){
@@ -393,18 +422,25 @@ footer{
 
 }
 
-@media (min-width: 581px) and (max-width:700px){
+@media (min-width: 581px) and (max-width:720px){
    .projects{
       grid-template-columns: repeat(2, 1fr) !important;
       gap: 0.8rem;
    }
 
 }
-@media (max-width:385px)
+@media (max-width:370px)
 {
 
 header{
-   gap: 1px;
+   gap: 10px;
+   margin-top: 1rem;
 }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    scroll-behavior: smooth;
+  }
 }
 
