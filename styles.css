@@ -307,6 +307,7 @@ main{
    justify-content: flex-start;
    align-items: center;
    gap: 1rem;
+   margin-top: 2rem;
 }
 
 h2{
