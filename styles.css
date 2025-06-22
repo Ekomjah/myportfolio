@@ -166,15 +166,24 @@ header{
       grid-column: span 1;
    } 
 
-   .resume{
-      grid-column:  2 / 3;
-      border: 1px solid;
-      display: flex;
-      margin: 0 3rem;
-      flex-flow: column nowrap;
-      align-items: center;
-      justify-content: center;
-      border-radius: 10px;
+
+.resume {
+  grid-column: 2 / 3;
+  border: 1px solid transparent;
+  margin: 0 3rem;
+  text-align: center;
+  border-radius: 10px;
+
+
+
+      i{
+         font-size: 5rem;
+         color: #000;
+         border: 1px solid transparent;
+         border-radius: 50%;
+         padding: 2rem;
+         background-color: #c4da49;
+      }
 
 
       p{text-align: center;
@@ -248,7 +257,7 @@ main{
    margin-bottom: 1rem;
    padding: 1rem;
 
-   img{
+   .projects-banner{
        width: 100%;
        max-height: 20rem;
          object-fit: cover;
