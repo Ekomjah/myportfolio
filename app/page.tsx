@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Navbar from "@/app/ui/Navbar";
 import ContributionGraph from "./ui/ContributionGraph";
-import { inter } from "./ui/fonts";
+import { geistMono, inter, lusitana } from "./ui/fonts";
 export default function Home() {
   return (
     <>
@@ -9,25 +9,35 @@ export default function Home() {
       <div className="flex flex-col items-center justify-center w-full max-w-page mx-auto">
         <header
           id="home"
-          className="flex flex-nowrap items-center justify-between w-full "
+          className="flex flex-nowrap items-center justify-around w-full mt-4"
         >
           <Image
             src="/images/me.png"
             alt="Portrait of Ekomjah Denis"
-            className="w-[200px] h-[200px] object-cover border-2 border-[#a52a2a] rounded-full mt-8"
+            className="w-50 h-50 object-cover border-4 dark:border-gray-600 border-gray-300 rounded-full"
             width={200}
             height={200}
             priority
           />
-          <div>
-            <h1
-              className={`m-0 text-center text-2xl text-gray-100 ${inter.className}`}
-            >
+          <div className={inter.className}>
+            <h1 className="m-0 text-center text-2xl text-foreground">
               Hi, I’m Ekomjah Denis
             </h1>
-            <p className="text-center">A Full-stack Developer</p>
+            <p className="text-center text-foreground/60">
+              A Full-stack Developer
+            </p>
           </div>
         </header>
+
+        <div
+          className={`mx-auto mt-8 mb-6 w-[80vw] max-w-page text-[1.3rem] text-[#5e5959] dark:text-[#748D96] text-justify`}
+        >
+          I&apos;m a full-stack engineer. I like building things people actually
+          enjoy using: small, finished, and out in the world rather than sitting
+          in a branch. Most of the work goes into the details nobody is meant to
+          notice, which is the part I like most. You can reach me at anishfn,
+          via email, or see my code on GitHub.
+        </div>
 
         {/* <div className="flex flex-nowrap justify-end items-end gap-6 mr-[12vw]">
         <a
