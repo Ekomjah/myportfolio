@@ -8,7 +8,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <Navbar /> 
+      <Navbar />
       <div className="flex flex-col items-center justify-center w-full max-w-page mx-auto">
         <header
           id="home"
@@ -43,9 +43,11 @@ export default function Home() {
         >
           <div>
             I&apos;m a full-stack engineer. I like building things people
-            actually enjoy using: small, finished, and out in the world rather
-            than sitting in a branch. Most of the work goes into the details
-            nobody is meant to notice, which is the part I like most.
+            actually enjoy using: practical, and useful, rather than sitting in
+            a branch. My skillsets span building frontend and backend systems,
+            from optimising page-load performance to building, deploying and
+            scaling full applications, including design systems, state
+            architecture and authentication.
           </div>
           <div>
             <span>You can reach me via</span>
