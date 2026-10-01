@@ -1,92 +1,97 @@
 import Image from "next/image";
-import "./styles.css";
+import Navbar from "@/app/ui/Navbar";
 
 export default function Home() {
   return (
     <>
-      <div className="nav-wrapper">
-        <nav>
-          <ul>
-            <li>
-              <a href="#home" className="nav-link">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#about" className="nav-link">
-                About
-              </a>
-            </li>
-            <li>
-              <a href="#projects" className="nav-link">
-                Projects
-              </a>
-            </li>
-            <li>
-              <a href="#contact" className="nav-link">
-                Contact
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-
-      <header id="home">
+      <Navbar />
+      <header
+        id="home"
+        className="flex flex-nowrap items-center justify-center w-full h-[350px] mt-4 gap-[4em] max-[370px]:gap-2.5 max-[370px]:mt-4 scroll-mt-[90px]"
+      >
         <Image
-          fill
-          src="/images/me.jpg"
+          src="/images/me.png"
           alt="Portrait of Ekomjah Denis"
-          className="header-Image"
+          className="w-[200px] h-[200px] object-cover border-2 border-[#a52a2a] rounded-full mt-8"
+          width={200}
+          height={200}
+          priority
         />
         <div>
-          <h1 className="header-name">Hi, I’m Ekomjah Denis</h1>
-          <p className="job-desc">A Full-stack Developer</p>
+          <h1 className="m-0 text-center text-[1.9rem] text-[#2c032c]">
+            Hi, I’m Ekomjah Denis
+          </h1>
+          <p className="text-center text-[1.3rem] font-bold tracking-[1px]">
+            A Full-stack Developer
+          </p>
         </div>
       </header>
 
-      <div className="contact-headerwrappper">
-        <a href="https://x.com/ekomjahedet" aria-label="X (Twitter)">
+      {/* <div className="flex flex-nowrap justify-end items-end gap-6 mr-[12vw]">
+        <a
+          href="https://x.com/ekomjahedet"
+          aria-label="X (Twitter)"
+          className="no-underline text-[#414040] text-2xl hover:text-[#0000ff]"
+        >
           <i className="fa-brands fa-x-twitter"></i>
         </a>
-        <a href="https://www.instagram.com/ekz_dee/" aria-label="Instagram">
+        <a
+          href="https://www.instagram.com/ekz_dee/"
+          aria-label="Instagram"
+          className="no-underline text-[#414040] text-2xl hover:text-[#0000ff]"
+        >
           <i className="fa-brands fa-instagram"></i>
         </a>
-        <a href="https://www.youtube.com/@ekz_dee" aria-label="YouTube">
+        <a
+          href="https://www.youtube.com/@ekz_dee"
+          aria-label="YouTube"
+          className="no-underline text-[#414040] text-2xl hover:text-[#0000ff]"
+        >
           <i className="fa-brands fa-youtube"></i>
         </a>
-        <a href="mailto:ekomjahedet@gmail.com" aria-label="Email">
+        <a
+          href="mailto:ekomjahedet@gmail.com"
+          aria-label="Email"
+          className="no-underline text-[#414040] text-2xl hover:text-[#0000ff]"
+        >
           <i className="fa-solid fa-envelope"></i>
         </a>
-        <a href="https://github.com/ekomjah" aria-label="GitHub">
+        <a
+          href="https://github.com/ekomjah"
+          aria-label="GitHub"
+          className="no-underline text-[#414040] text-2xl hover:text-[#0000ff]"
+        >
           <i className="fa-brands fa-github"></i>
         </a>
-        <a href="tel:+2347049650155" aria-label="Phone">
+        <a
+          href="tel:+2347049650155"
+          aria-label="Phone"
+          className="no-underline text-[#414040] text-2xl hover:text-[#0000ff]"
+        >
           <i className="fa-solid fa-phone"></i>
         </a>
-      </div>
+      </div> */}
 
       {/* REMEMBER TO ADD ALL YOUR SOCIAL ICONS HERE FIRST! */}
 
-      <main>
-        <section id="about">
-          <Image
-            fill
-            src="https://media.istockphoto.com/id/2013971698/photo/it-programmer-using-computer.jpg?s=612x612&w=0&k=20&c=BllC3Dt9V7ToH3OM-7wGJBEqeW_gCxasWYm4ra8x9vY="
-            alt="me in a typical coding session"
-          />
-          <div className="tools-stack">
+      <main className="mx-auto my-2.5 w-[80vw] max-w-[1200px] rounded-2xl border border-transparent p-8 max-[580px]:w-full">
+        <section
+          id="about"
+          className="scroll-mt-[90px] rounded-[30px] bg-[#f8f8f8] mb-4 p-4 text-justify"
+        >
+          <div className="flex justify-start items-center gap-4 mt-8">
             <i className="fa-regular fa-circle-user"></i>
-            <h2 className="id">About Me</h2>
+            <h2 className="m-0 text-[2rem] font-bold">About Me</h2>
           </div>
 
-          <div className="about">
-            <p>
+          <div className="grid grid-cols-2 gap-4">
+            <p className="col-span-2 my-[0.8rem] text-[1.3rem] text-[#5e5959] text-justify">
               My name is Ekomjah Denis, a 16-year-old Full-stack Software
               Developer with 1+ years of experience in using many software tools
               and technologies, ranging from languages to version control
               systems that track code changes.
             </p>
-            <p>
+            <p className="col-span-2 my-[0.8rem] text-[1.3rem] text-[#5e5959] text-justify">
               I am dedicated to producing quality software with great
               aesthetics, ease of use and user experience while maintaining the
               core software principles. Coding has become part of my life, and I
@@ -94,188 +99,40 @@ export default function Home() {
               people, both old and young, with the software I architect and
               develop.
             </p>
-            <p>
+            <p className="col-span-1 my-[0.8rem] text-[1.3rem] text-[#5e5959] text-justify">
               I act as a geek sometimes, spending most of my leisure playing
               thinking-intensive games like chess, practicing my guitar, or just
               surfing the Net or scrolling endlessly through TikTok.
             </p>
-            <div className="resume">
-              <a href="/resume.pdf" download>
-                <i className="fa-solid fa-briefcase"></i>
-                <p>Download my Resume</p>
+            <div className="col-[2/3] mx-12 my-0 rounded-[10px] border border-transparent text-center">
+              <a href="/resume.pdf" download className="no-underline">
+                <i className="text-[5rem] text-black rounded-full border border-transparent p-8 bg-[#c4da49]"></i>
+                <p className="text-center my-[0.8rem] text-[1.3rem] text-[#0000ff] hover:underline active:underline">
+                  Download my Resume
+                </p>
               </a>
             </div>
           </div>
         </section>
 
-        <section id="projects">
-          <Image
-            className="projects-banner"
-            src="https://media.istockphoto.com/id/1075599562/photo/programmer-working-with-program-code.jpg?s=612x612&w=0&k=20&c=n3Vw5SMbMCWW1YGG6lnTfrwndNQ8B_R4Vw-BN7LkqpA="
-            alt="Programmer working with code"
-          />
-          <div className="tools-stack">
+        <section
+          id="projects"
+          className="scroll-mt-[90px] rounded-[30px] bg-[#f8f8f8] mb-4 p-4"
+        >
+          <div className="flex justify-start items-center gap-4 mt-8">
             <i className="fa-solid fa-screwdriver-wrench"></i>
-            <h2 className="id">Technologies</h2>
+            <h2 className="m-0 text-[2rem] font-bold">Technologies</h2>
           </div>
-          <h3 className="techstack-para">
+          <h3 className="text-[1.3rem] text-[#5e5959] font-extralight">
             Here are some of the languages and technologies I am conversant with
             and what I’ve built with them:
           </h3>
-
-          <div className="mytechstack">
-            <ul className="techstack-list">
-              <li className="techstack-item">
-                <i className="fa-brands fa-html5"></i>
-                <p>HTML</p>
-              </li>
-              <li className="techstack-item">
-                <i className="fa-brands fa-css3-alt"></i>
-                <p>CSS</p>
-              </li>
-              <li className="techstack-item">
-                <i className="fa-brands fa-js"></i>
-                <p>JavaScript</p>
-              </li>
-              <li className="techstack-item">
-                <i className="fa-brands fa-python"></i>
-                <p>Python</p>
-              </li>
-              <li className="techstack-item">
-                <i className="fa-solid fa-terminal"></i>
-                <p>Command Line Interface</p>
-              </li>
-              <li className="techstack-item">
-                <i className="fa-brands fa-git-alt"></i>
-                <p>Git</p>
-              </li>
-              <li className="techstack-item">
-                <i className="fa-brands fa-react"></i>
-                <p>React</p>
-              </li>
-            </ul>
-          </div>
-
-          <div className="projects">
-            <div className="blog-post-card">
-              <Image
-                src="https://i.postimg.cc/JhNPDgFZ/portfolio.png"
-                alt="my personal website"
-              />
-              <div className="post-content">
-                <h2 className="post-title">My Portfolio</h2>
-                <a
-                  href="https://ekomjah.github.io/myportfolio/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Demo Live
-                </a>
-                <a
-                  href="https://github.com/Ekomjah/myportfolio"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View Code
-                </a>
-              </div>
-            </div>
-
-            <div className="blog-post-card">
-              <Image
-                src="https://i.postimg.cc/rFwCyzc1/rps.png"
-                alt="an rps game"
-              />
-              <div className="post-content">
-                <h2 className="post-title">Rock Paper Scissors Game</h2>
-                <a
-                  href="https://ekomjah.github.io/rock-paper-scissors-javascript-console-game/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Demo Live
-                </a>
-                <a
-                  href="https://github.com/Ekomjah/rock-paper-scissors-javascript-console-game"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View Code
-                </a>
-              </div>
-            </div>
-
-            <div className="blog-post-card">
-              <Image
-                src="https://i.postimg.cc/Wzj8w7QC/palindrome.png"
-                alt="a palindrome checker"
-              />
-              <div className="post-content">
-                <h2 className="post-title">A Palindrome Checker</h2>
-                <a
-                  href="https://ekomjah.github.io/is-it-a-palindrome-/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Demo Live
-                </a>
-                <a
-                  href="https://github.com/Ekomjah/is-it-a-palindrome-"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View Code
-                </a>
-              </div>
-            </div>
-
-            <div className="blog-post-card">
-              <Image
-                src="https://i.postimg.cc/zGdQD49B/plp.png"
-                alt="a product landing page"
-              />
-              <div className="post-content">
-                <h2 className="post-title">A Product Landing Page</h2>
-                <a
-                  href="https://ekomjah.github.io/Atomica/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Demo Live
-                </a>
-                <a
-                  href="https://github.com/Ekomjah/Atomica"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View Code
-                </a>
-              </div>
-            </div>
-
-            <div className="blog-post-card">
-              <Image
-                src="https://i.postimg.cc/FFB1cK3g/tdp.png"
-                alt="a technical documentation page"
-              />
-              <div className="post-content">
-                <h2 className="post-title">A Technical Documentation Page</h2>
-                <a
-                  href="https://github.com/Ekomjah/Main-project"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View Code
-                </a>
-              </div>
-            </div>
-          </div>
         </section>
 
-        <section id="contact">
-          <div className="tools-stack">
+        <section id="contact" className="scroll-mt-[90px]">
+          <div className="flex justify-start items-center gap-4 mt-8">
             <i className="fa-solid fa-envelope"></i>
-            <h2 className="id">Contact</h2>
+            <h2 className="m-0 text-[2rem] font-bold">Contact</h2>
           </div>
           <p>
             Want to work together? Email me at{" "}
