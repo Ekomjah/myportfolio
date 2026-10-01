@@ -4,6 +4,7 @@
 :root {
   --background: #fcfcfc;
   --foreground: #171717;
+  --muted: #5e5959;
   --contrib-0: #ebedf0;
   --contrib-1: #9be9a8;
   --contrib-2: #40c463;
@@ -15,6 +16,7 @@
 .dark {
   --background: #0a0a0a;
   --foreground: #ededed;
+  --muted: #9e9e9e;
   --contrib-0: #161b22;
   --contrib-1: #0e4429;
   --contrib-2: #006d32;
@@ -27,6 +29,7 @@
   --container-page: 50rem;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
   --color-contrib-0: var(--contrib-0);
   --color-contrib-1: var(--contrib-1);
   --color-contrib-2: var(--contrib-2);

@@ -1,7 +1,10 @@
 import Image from "next/image";
 import Navbar from "@/app/ui/Navbar";
 import ContributionGraph from "./ui/ContributionGraph";
-import { geistMono, inter, lusitana } from "./ui/fonts";
+import { lusitana } from "./ui/fonts";
+import { Mail } from "lucide-react";
+import { SiGithub } from "@icons-pack/react-simple-icons";
+import Link from "next/link";
 export default function Home() {
   return (
     <>
@@ -9,34 +12,72 @@ export default function Home() {
       <div className="flex flex-col items-center justify-center w-full max-w-page mx-auto">
         <header
           id="home"
-          className="flex flex-nowrap items-center justify-around w-full mt-4"
+          className="scroll-mt-[90px] mt-10 flex w-full flex-col items-start gap-7 sm:flex-row sm:items-center sm:gap-12"
         >
           <Image
             src="/images/me.png"
             alt="Portrait of Ekomjah Denis"
-            className="w-50 h-50 object-cover border-4 dark:border-gray-600 border-gray-300 rounded-full"
+            className="size-[168px] shrink-0 rounded-full border-4 border-foreground/15 object-cover sm:size-[200px]"
             width={200}
             height={200}
             priority
           />
-          <div className={inter.className}>
-            <h1 className="m-0 text-center text-2xl text-foreground">
-              Hi, I’m Ekomjah Denis
-            </h1>
-            <p className="text-center text-foreground/60">
-              A Full-stack Developer
+
+          <div className="min-w-0">
+            <p className="m-0 flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.18em] text-muted">
+              <span
+                aria-hidden="true"
+                className="size-[7px] rounded-full bg-[#c4da49]"
+              />
+              Full-stack developer
             </p>
+            <h1
+              className={`${lusitana.className} m-0 mt-3 text-[42px] leading-[1.04] tracking-tight text-foreground sm:text-[56px]`}
+            >
+              Ekomjah Denis
+            </h1>
           </div>
         </header>
 
         <div
-          className={`mx-auto mt-8 mb-6 w-[80vw] max-w-page text-[1.3rem] text-[#5e5959] dark:text-[#748D96] text-justify`}
+          id="description"
+          className="mx-auto mt-8 mb-6 w-[80vw] max-w-page text-[1.3rem] text-muted text-justify"
         >
-          I&apos;m a full-stack engineer. I like building things people actually
-          enjoy using: small, finished, and out in the world rather than sitting
-          in a branch. Most of the work goes into the details nobody is meant to
-          notice, which is the part I like most. You can reach me at anishfn,
-          via email, or see my code on GitHub.
+          <div>
+            I&apos;m a full-stack engineer. I like building things people
+            actually enjoy using: small, finished, and out in the world rather
+            than sitting in a branch. Most of the work goes into the details
+            nobody is meant to notice, which is the part I like most.
+          </div>
+          <div>
+            <span>You can reach me via</span>
+            <Link
+              href="mailto:ekomjahedet@gmail.com"
+              className="no-underline p-1"
+            >
+              <Mail strokeWidth={2.5} size={20} className="inline-block m-1" />
+              <span className="text-black dark:text-white hover:underline">
+                email
+              </span>
+            </Link>
+            ,
+            <Link href="https://x.com/ekz_dee" className="no-underline p-1">
+              <span className="inline-block m-1 font-black">𝕏 </span>
+              <span className="text-black dark:text-white hover:underline">
+                ekomjah
+              </span>
+            </Link>{" "}
+            or see my code on
+            <Link
+              href="https://github.com/ekomjah"
+              className="no-underline p-1"
+            >
+              <SiGithub size={20} className="inline-block m-1" />
+              <span className="text-black dark:text-white hover:underline">
+                GitHub
+              </span>
+            </Link>{" "}
+          </div>
         </div>
 
         {/* <div className="flex flex-nowrap justify-end items-end gap-6 mr-[12vw]">
