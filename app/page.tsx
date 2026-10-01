@@ -80,53 +80,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* <div className="flex flex-nowrap justify-end items-end gap-6 mr-[12vw]">
-        <a
-          href="https://x.com/ekomjahedet"
-          aria-label="X (Twitter)"
-          className="no-underline text-[#414040] text-2xl hover:text-[#0000ff]"
-        >
-          <i className="fa-brands fa-x-twitter"></i>
-        </a>
-        <a
-          href="https://www.instagram.com/ekz_dee/"
-          aria-label="Instagram"
-          className="no-underline text-[#414040] text-2xl hover:text-[#0000ff]"
-        >
-          <i className="fa-brands fa-instagram"></i>
-        </a>
-        <a
-          href="https://www.youtube.com/@ekz_dee"
-          aria-label="YouTube"
-          className="no-underline text-[#414040] text-2xl hover:text-[#0000ff]"
-        >
-          <i className="fa-brands fa-youtube"></i>
-        </a>
-        <a
-          href="mailto:ekomjahedet@gmail.com"
-          aria-label="Email"
-          className="no-underline text-[#414040] text-2xl hover:text-[#0000ff]"
-        >
-          <i className="fa-solid fa-envelope"></i>
-        </a>
-        <a
-          href="https://github.com/ekomjah"
-          aria-label="GitHub"
-          className="no-underline text-[#414040] text-2xl hover:text-[#0000ff]"
-        >
-          <i className="fa-brands fa-github"></i>
-        </a>
-        <a
-          href="tel:+2347049650155"
-          aria-label="Phone"
-          className="no-underline text-[#414040] text-2xl hover:text-[#0000ff]"
-        >
-          <i className="fa-solid fa-phone"></i>
-        </a>
-      </div> */}
-
-        {/* REMEMBER TO ADD ALL YOUR SOCIAL ICONS HERE FIRST! */}
-
         <div className="mx-auto mt-8 mb-6 w-[80vw] max-w-page max-[580px]:w-full">
           <ContributionGraph login="ekomjah" />
         </div>
