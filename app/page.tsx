@@ -1,14 +1,14 @@
 import Image from "next/image";
 import Navbar from "@/app/ui/Navbar";
 import ContributionGraph from "./ui/ContributionGraph";
-import { lusitana } from "./ui/fonts";
+import { lusitana, inter } from "./ui/fonts";
 import { Mail } from "lucide-react";
 import { SiGithub } from "@icons-pack/react-simple-icons";
 import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <Navbar />
+      <Navbar /> 
       <div className="flex flex-col items-center justify-center w-full max-w-page mx-auto">
         <header
           id="home"
@@ -24,12 +24,10 @@ export default function Home() {
           />
 
           <div className="min-w-0">
-            <p className="m-0 flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.18em] text-muted">
-              <span
-                aria-hidden="true"
-                className="size-[7px] rounded-full bg-[#c4da49]"
-              />
-              Full-stack developer
+            <p
+              className={`${inter.className} m-0 flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.18em] text-muted`}
+            >
+              {`<Full-stack developer/>`}
             </p>
             <h1
               className={`${lusitana.className} m-0 mt-3 text-[42px] leading-[1.04] tracking-tight text-foreground sm:text-[56px]`}
