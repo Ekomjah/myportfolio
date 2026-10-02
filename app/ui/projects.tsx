@@ -22,14 +22,6 @@ const projects: Project[] = [
     desc: "an asset capture, search, and store SaaS",
   },
   {
-    name: "dortrl",
-    status: "upcoming",
-    icon: <Cable size={40} />,
-    url: "https://github.com/ekomjah/dortrl",
-    // demo: "dortrl.vercel.app",
-    desc: "a URL shortener and link management system",
-  },
-  {
     name: "Penny-wise",
     status: "completed",
     // image: "/projects/Penny-wise.png",
@@ -39,13 +31,21 @@ const projects: Project[] = [
     desc: "a personal finance management app",
   },
   {
+    name: "dortrl",
+    status: "upcoming",
+    icon: <Cable size={40} />,
+    url: "https://github.com/ekomjah/dortrl",
+    // demo: "dortrl.vercel.app",
+    desc: "a URL shortener and link management system",
+  },
+  {
     name: "Evendar",
     status: "upcoming",
     // image: "/projects/Evendar.png",
     url: "https://github.com/ekomjah/evendar",
     icon: <CalendarClock size={40} />,
     // demo: "evendar.vercel.app",
-    desc: "a calendar and event management app",
+    desc: "a calendar scheduling software",
   },
 ];
 import { SiGithub } from "@icons-pack/react-simple-icons";
@@ -89,6 +89,16 @@ export default function Projects() {
                   className={`${ICON} hover:transform hover:scale-115 transition-transform duration-200`}
                 >
                   {project.icon}
+                </span>
+              )}
+
+              {project.status !== "completed" && (
+                <span
+                  title="In progress"
+                  className="absolute top-2 left-2 flex size-6 items-center justify-center rounded-full bg-black/55 text-white backdrop-blur-sm"
+                >
+                  <Lock size={12} aria-hidden="true" />
+                  <span className="sr-only">In progress</span>
                 </span>
               )}
             </Link>
