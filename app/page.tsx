@@ -1,7 +1,7 @@
 import ContributionGraph from "./ui/ContributionGraph";
 import { lusitana, inter } from "./ui/fonts";
 import { Mail } from "lucide-react";
-import { SiGithub } from "@icons-pack/react-simple-icons";
+import { SiGithub, SiX } from "@icons-pack/react-simple-icons";
 import Link from "next/link";
 import Header from "./ui/Header";
 export default function Home() {
@@ -9,7 +9,10 @@ export default function Home() {
     <div className="flex flex-col items-center justify-center w-full mx-auto max-w-page min-h-full p-8">
       <Header inter={inter} lusitana={lusitana} />
 
-      <div id="description" className="mx-auto mt-8 mb-6 text-lg text-muted">
+      <div
+        id="description"
+        className="mx-auto mt-8 mb-6 text-lg text-muted space-y-2"
+      >
         <div>
           I&apos;m a full-stack engineer. I like building things people actually
           enjoy using: practical, and useful, rather than sitting in a branch.
@@ -18,31 +21,35 @@ export default function Home() {
           full applications, including design systems, state architecture and
           authentication.
         </div>
-        <div>
-          <span>You can reach me via</span>
+        <div className="flex flex-wrap items-center gap-x-1">
+          <span className="pr-1">You can reach me via {"  "}</span>
           <Link
             href="mailto:ekomjahedet@gmail.com"
-            className="no-underline p-1 inline-flex items-center"
+            className="inline-flex items-center gap-[6px] align-middle no-underline text-black dark:text-white hover:underline"
           >
-            <Mail strokeWidth={2.5} size={20} className="inline-block m-1" />
-            <span className="text-black dark:text-white hover:underline">
-              email
-            </span>
+            <Mail
+              strokeWidth={2.5}
+              size={18}
+              className="shrink-0 translate-y-px"
+            />
+            <span>email</span>
           </Link>
-          ,
-          <Link href="https://x.com/ekz_dee" className="no-underline p-1">
-            <span className="inline-block m-1 font-black">𝕏 </span>
-            <span className="text-black dark:text-white hover:underline">
-              ekomjah
-            </span>
-          </Link>{" "}
-          or see my code on
-          <Link href="https://github.com/ekomjah" className="no-underline p-1">
-            <SiGithub size={20} className="inline-block m-1" />
-            <span className="text-black dark:text-white hover:underline">
-              GitHub
-            </span>
-          </Link>{" "}
+          <span>,</span>
+          <Link
+            href="https://x.com/ekz_dee"
+            className="inline-flex items-center gap-[6px] align-middle no-underline text-black dark:text-white hover:underline"
+          >
+            <SiX size={15} className="shrink-0 -translate-y-px" />
+            <span>@ekz_dee</span>
+          </Link>
+          <span className="pr-1">or see my code on</span>
+          <Link
+            href="https://github.com/ekomjah"
+            className="inline-flex items-center gap-[6px] align-middle no-underline text-black dark:text-white hover:underline"
+          >
+            <SiGithub size={18} className="shrink-0 -translate-y-px" />
+            <span>GitHub</span>
+          </Link>
         </div>
       </div>
 
