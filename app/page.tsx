@@ -14,12 +14,14 @@ export default function Home() {
         className="mx-auto mt-8 mb-6 text-lg text-muted space-y-2"
       >
         <div>
-          I&apos;m a full-stack engineer. I like building things people actually
-          enjoy using: practical, and useful, rather than sitting in a branch.
-          My skillsets span building frontend and backend systems, from
-          optimising page-load performance to building, deploying and scaling
-          full applications, including design systems, state architecture and
-          authentication.
+          <p>Hi, I&apos;m Ekomjah Denis, a Full-stack Software Developer.</p>
+          <p>
+            {" "}
+            My skills span frontend and backend development, from optimizing
+            page-load performance to building, deploying and scaling full-stack
+            applications. I also work with design systems, state architecture
+            and authentication
+          </p>
         </div>
         <div className="flex flex-wrap items-center gap-x-1">
           <span className="pr-1">You can reach me via {"  "}</span>
