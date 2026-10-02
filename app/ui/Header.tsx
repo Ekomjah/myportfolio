@@ -21,7 +21,7 @@ export default function Header({ inter, lusitana }: HeaderProps) {
 
       <div className="min-w-0">
         <strong
-          className={`${inter.className} m-0 flex items-center gap-2 font-mono font-bold text-[12px] uppercase tracking-[0.18em] text-muted`}
+          className={`${inter.className} m-0 text-sm flex items-center gap-2 font-mono font-bold uppercase tracking-[0.18em] text-muted`}
         >
           {`<Full-stack developer/>`}
         </strong>

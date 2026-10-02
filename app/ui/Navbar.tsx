@@ -10,9 +10,10 @@ import Link from "next/link";
 const EMAIL = "ekomjahedet@gmail.com";
 
 const SECTIONS = [
-  { id: "about", label: "About" },
-  { id: "projects", label: "Stack" },
-  { id: "contact", label: "Contact" },
+  { id: "projects", label: "Projects" },
+  { id: "stack", label: "Stack" },
+  { id: "resume", label: "Resumé" },
+  { id: "blog", label: "Blog" },
 ];
 
 export default function NavBar() {
@@ -58,7 +59,9 @@ export default function NavBar() {
               {SECTIONS.map(({ id, label }) => (
                 <li key={id} className="shrink-0">
                   <Link
-                    href={`#${id}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={`/${id}`}
                     className="flex items-center gap-[6px] rounded-full px-[12px] py-[8px] text-[15px] font-medium text-foreground/55 transition-colors duration-200 motion-reduce:transition-none hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
                   >
                     {label}

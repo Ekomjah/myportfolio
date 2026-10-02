@@ -109,9 +109,10 @@ export default async function ContributionGraph({
   return (
     <section className="rounded-[30px] border border-foreground/[0.07] bg-foreground/[0.03] p-5">
       <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
-        <h2 className="m-0 font-mono text-[11px] uppercase tracking-[0.16em] text-foreground/45">
-          GitHub activity
-        </h2>
+        <p className="text-base text-foreground/50">
+          {totalContributions.toLocaleString("en-US")} contributions in the last
+          12 months
+        </p>
         <div
           aria-hidden="true"
           className="flex items-center gap-[6px] font-mono text-[11px] text-foreground/40"
@@ -123,15 +124,6 @@ export default async function ContributionGraph({
           <span>more</span>
         </div>
       </div>
-
-      <p className="mt-3 mb-4 flex items-baseline gap-2">
-        <span className="font-mono text-[2rem] leading-none tracking-tight tabular-nums">
-          {totalContributions.toLocaleString("en-US")}
-        </span>
-        <span className="text-[13px] text-foreground/50">
-          contributions in the last 12 months
-        </span>
-      </p>
 
       <div
         tabIndex={0}
@@ -183,7 +175,7 @@ export default async function ContributionGraph({
         className="mt-4 inline-flex items-center gap-1 font-mono text-[11px] tracking-[0.08em] text-foreground/45 transition-colors duration-200 motion-reduce:transition-none hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
       >
         github.com/{login}
-        <ArrowUpRight />
+        <ArrowUpRight size={12} />
       </Link>
     </section>
   );
