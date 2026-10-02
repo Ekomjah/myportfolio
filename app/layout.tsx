@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { geistMono, geistSans } from "@/app/ui/fonts";
 import "./globals.css";
+import Navbar from "@/app/ui/Navbar";
 import { ThemeProvider } from "@/app/ui/ThemeProvider";
 
 import { Toaster } from "sonner";
@@ -15,10 +16,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased max-[800px]:text-[10px] max-[580px]:text-[7px] motion-safe:scroll-smooth`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased motion-safe:scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col">
-        <ThemeProvider>{children}</ThemeProvider>
+      <body className="flex flex-col">
+        <ThemeProvider>
+          <Navbar />
+          {children}
+        </ThemeProvider>
         <Toaster position="top-right" duration={1000} />
       </body>
     </html>

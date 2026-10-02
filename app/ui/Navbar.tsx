@@ -34,7 +34,7 @@ export default function NavBar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-foreground/10 bg-background/85 backdrop-blur-md supports-[backdrop-filter]:bg-background/70">
-      <div className="mx-auto flex justify-between p-6 md:p-2 w-[80vw] max-w-page max-[580px]:w-full items-center gap-[12px] px-[16px]">
+      <div className="mx-auto flex justify-between p-4 md:p-2 w-[80vw] max-w-page max-[580px]:w-full items-center gap-[12px] px-[16px]">
         <div className="flex items-center gap-4">
           <a
             href="#home"
