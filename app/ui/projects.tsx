@@ -62,7 +62,7 @@ import { geistSans, inter } from "./fonts";
 export default function Projects() {
   return (
     <div
-      className={` ${inter.className} grid grid-cols-1 gap-4 md:grid-cols-2 w-full`}
+      className={` ${inter.className} grid w-full grid-cols-1 gap-4 md:grid-cols-2`}
     >
       {projects.map((project) => {
         return (
@@ -71,7 +71,7 @@ export default function Projects() {
             className="flex flex-col gap-2 rounded-md border border-gray-200 p-2 dark:border-gray-900"
           >
             <Link
-              className={`${MEDIA} bg-gray-200 dark:bg-[#1c1c1c] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground`}
+              className={`${MEDIA} focus-visible:outline-foreground bg-gray-200 focus-visible:outline-2 focus-visible:outline-offset-2 dark:bg-[#1c1c1c]`}
               href={project.demo ?? project.url}
               target="_blank"
               rel="noopener noreferrer"
@@ -82,11 +82,11 @@ export default function Projects() {
                   alt={project.name}
                   fill
                   sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
-                  className="object-cover hover:transform hover:scale-105 transition-transform duration-200"
+                  className="object-cover transition-transform duration-200 hover:scale-105 hover:transform"
                 />
               ) : (
                 <span
-                  className={`${ICON} hover:transform hover:scale-115 transition-transform duration-200`}
+                  className={`${ICON} transition-transform duration-200 hover:scale-115 hover:transform`}
                 >
                   {project.icon}
                 </span>
@@ -108,7 +108,7 @@ export default function Projects() {
                 {project.name}
               </h2>
               <Link
-                className="shrink-0 rounded-full border border-gray-300 p-0.5 dark:border-gray-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
+                className="focus-visible:outline-foreground shrink-0 rounded-full border border-gray-300 p-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 dark:border-gray-600"
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"

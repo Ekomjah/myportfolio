@@ -8,12 +8,12 @@ export default function Header({ inter, lusitana }: HeaderProps) {
   return (
     <header
       id="home"
-      className="scroll-mt-22.5 mt-10 flex w-full flex-col items-start gap-7 sm:flex-row sm:items-center sm:gap-12"
+      className="mt-10 flex w-full scroll-mt-22.5 flex-col items-start gap-7 sm:flex-row sm:items-center sm:gap-12"
     >
       <Image
         src="/images/me.png"
         alt="Portrait of Ekomjah Denis"
-        className="size-[168px] shrink-0 rounded-full border-4 border-foreground/15 object-cover sm:size-[200px]"
+        className="border-foreground/15 size-[168px] shrink-0 rounded-full border-4 object-cover sm:size-[200px]"
         width={200}
         height={200}
         priority
@@ -21,12 +21,12 @@ export default function Header({ inter, lusitana }: HeaderProps) {
 
       <div className="min-w-0">
         <strong
-          className={`${inter.className} m-0 text-sm flex items-center gap-2 font-mono font-bold uppercase tracking-[0.18em] text-muted`}
+          className={`${inter.className} text-muted m-0 flex items-center gap-2 font-mono text-sm font-bold tracking-[0.18em] uppercase`}
         >
           {`<Full-stack developer/>`}
         </strong>
         <h1
-          className={`${lusitana.className} m-0 mt-3 text-[42px] leading-[1.04] tracking-tight text-foreground sm:text-[56px]`}
+          className={`${lusitana.className} text-foreground m-0 mt-3 text-[42px] leading-[1.04] tracking-tight sm:text-[56px]`}
         >
           Ekomjah Denis
         </h1>

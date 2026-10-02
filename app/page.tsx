@@ -7,12 +7,12 @@ import Header from "./ui/Header";
 import Projects from "./ui/projects";
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-center w-full mx-auto max-w-page min-h-full p-8">
+    <main className="max-w-page mx-auto flex min-h-full w-full flex-col items-center justify-center p-8">
       <Header inter={inter} lusitana={lusitana} />
 
       <div
         id="description"
-        className="mx-auto mt-8 pb-8 text-lg text-muted space-y-2 border-b border-foreground/10"
+        className="text-muted border-foreground/10 mx-auto mt-8 space-y-2 border-b pb-8 text-lg"
       >
         <div>
           <p>Hi, I&apos;m Ekomjah Denis, a Full-stack Software Developer.</p>
@@ -28,7 +28,7 @@ export default function Home() {
           <span className="pr-1">You can reach me via {"  "}</span>
           <Link
             href="mailto:ekomjahedet@gmail.com"
-            className="inline-flex items-center gap-[4px] align-middle no-underline text-black dark:text-white hover:underline"
+            className="inline-flex items-center gap-[4px] align-middle text-black no-underline hover:underline dark:text-white"
           >
             <Mail
               strokeWidth={2.5}
@@ -40,7 +40,7 @@ export default function Home() {
           <span>,</span>
           <Link
             href="https://x.com/ekz_dee"
-            className="inline-flex items-center gap-[4px] align-middle no-underline text-black dark:text-white hover:underline"
+            className="inline-flex items-center gap-[4px] align-middle text-black no-underline hover:underline dark:text-white"
           >
             <SiX
               size={15}
@@ -51,7 +51,7 @@ export default function Home() {
           <span className="pr-1">or see my code on</span>
           <Link
             href="https://github.com/ekomjah"
-            className="inline-flex items-center gap-[4px] align-middle no-underline text-black dark:text-white hover:underline"
+            className="inline-flex items-center gap-[4px] align-middle text-black no-underline hover:underline dark:text-white"
           >
             <SiGithub size={18} className="shrink-0 -translate-y-px" />
             <span>GitHub</span>
@@ -60,19 +60,19 @@ export default function Home() {
       </div>
 
       <section id="projects" className="mb-4 w-full">
-        <div className="mt-8 m-0 text-xl font-bold">Selected Projects</div>
-        <h3 className="text-lg text-muted mt-2 mb-4">
+        <div className="m-0 mt-8 text-xl font-bold">Selected Projects</div>
+        <h3 className="text-muted mt-2 mb-4 text-lg">
           A space for the work that best shows how I think and build...
         </h3>
         <Projects />
       </section>
 
-      <div className="mx-auto mt-8 mb-6 w-[80vw] max-w-page max-[580px]:w-full">
-        <div className="flex mb-2 justify-between items-center">
+      <div className="max-w-page mx-auto mt-8 mb-6 w-[80vw] max-[580px]:w-full">
+        <div className="mb-2 flex items-center justify-between">
           <p>Github Activity</p>
           <Link
             href="https://github.com/ekomjah"
-            className="inline-flex items-center gap-[4px] align-middle no-underline text-black dark:text-white hover:underline"
+            className="inline-flex items-center gap-[4px] align-middle text-black no-underline hover:underline dark:text-white"
           >
             <SiGithub size={18} className="shrink-0 -translate-y-px" />
             <span>GitHub</span>

@@ -34,35 +34,35 @@ export default function NavBar() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-foreground/10 bg-background/85 backdrop-blur-md supports-[backdrop-filter]:bg-background/70">
-      <div className="mx-auto flex justify-between p-4 md:p-2 w-[80vw] max-w-page max-[580px]:w-full items-center gap-[12px] px-[16px]">
+    <header className="border-foreground/10 bg-background/85 supports-[backdrop-filter]:bg-background/70 sticky top-0 z-50 border-b backdrop-blur-md">
+      <div className="max-w-page mx-auto flex w-[80vw] items-center justify-between gap-[12px] p-4 px-[16px] max-[580px]:w-full md:p-2">
         <div className="flex items-center gap-4">
           <a
             href="#home"
             aria-label="Ekomjah Denis, back to top"
-            className="shrink-0 rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
+            className="focus-visible:outline-foreground shrink-0 rounded-full focus-visible:outline-2 focus-visible:outline-offset-2"
           >
             <Image
               src="/images/me.png"
               alt=""
               width={80}
               height={80}
-              className="size-[40px] rounded-full object-cover ring-1 ring-foreground/20 max-[420px]:size-[36px]"
+              className="ring-foreground/20 size-[40px] rounded-full object-cover ring-1 max-[420px]:size-[36px]"
             />
           </a>
 
           <nav
             aria-label="Primary"
-            className="min-w-0 flex-1 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            className="min-w-0 flex-1 [scrollbar-width:none] overflow-x-auto [&::-webkit-scrollbar]:hidden"
           >
-            <ul className="flex items-center gap-[2px] justify-end min-[601px]:justify-center min-[601px]:gap-1">
+            <ul className="flex items-center justify-end gap-[2px] min-[601px]:justify-center min-[601px]:gap-1">
               {SECTIONS.map(({ id, label }) => (
                 <li key={id} className="shrink-0">
                   <Link
                     target="_blank"
                     rel="noopener noreferrer"
                     href={`/${id}`}
-                    className="flex items-center gap-[6px] rounded-full px-[12px] py-[8px] text-[15px] font-medium text-foreground/55 transition-colors duration-200 motion-reduce:transition-none hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
+                    className="text-foreground/55 hover:text-foreground focus-visible:outline-foreground flex items-center gap-[6px] rounded-full px-[12px] py-[8px] text-[15px] font-medium transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 motion-reduce:transition-none"
                   >
                     {label}
                   </Link>
@@ -77,7 +77,7 @@ export default function NavBar() {
             type="button"
             onClick={copyEmail}
             title="Copy email to clipboard"
-            className="flex h-[36px] items-center gap-[8px] rounded border border-foreground/15 bg-foreground/[0.03] px-[12px] text-[13px] font-medium text-foreground/70 transition-colors duration-200 motion-reduce:transition-none hover:border-foreground/30 hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
+            className="border-foreground/15 bg-foreground/[0.03] text-foreground/70 hover:border-foreground/30 hover:text-foreground focus-visible:outline-foreground flex h-[36px] items-center gap-[8px] rounded border px-[12px] text-[13px] font-medium transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 motion-reduce:transition-none"
           >
             {copied ? <Check size={15} /> : <Copy size={15} />}
             <span className="max-[520px]:sr-only">

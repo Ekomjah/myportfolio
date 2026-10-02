@@ -107,15 +107,15 @@ export default async function ContributionGraph({
   const labels = monthLabels(weeks);
 
   return (
-    <section className="rounded-[30px] border border-foreground/[0.07] bg-foreground/[0.03] p-5">
+    <section className="border-foreground/[0.07] bg-foreground/[0.03] rounded-[30px] border p-5">
       <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
-        <p className="text-base text-foreground/50">
+        <p className="text-foreground/50 text-base">
           {totalContributions.toLocaleString("en-US")} contributions in the last
           12 months
         </p>
         <div
           aria-hidden="true"
-          className="flex items-center gap-[6px] font-mono text-[11px] text-foreground/40"
+          className="text-foreground/40 flex items-center gap-[6px] font-mono text-[11px]"
         >
           <span>less</span>
           {LEVELS.map((level) => (
@@ -129,14 +129,14 @@ export default async function ContributionGraph({
         tabIndex={0}
         role="group"
         aria-label="Daily contributions calendar, scrolls sideways"
-        className="p-4 rounded-2xl overflow-x-auto [&::-webkit-scrollbar]:hidden max-[1100px]:mask-[linear-gradient(to_right,#000_calc(100%-32px),transparent)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
+        className="focus-visible:outline-foreground overflow-x-auto rounded-2xl p-4 focus-visible:outline-2 focus-visible:outline-offset-4 max-[1100px]:mask-[linear-gradient(to_right,#000_calc(100%-32px),transparent)] [&::-webkit-scrollbar]:hidden"
       >
         <div aria-hidden="true" className="flex w-max">
           <div className={`flex flex-col ${GAP} pt-[20px] pr-2`}>
             {WEEKDAYS.map((weekday, index) => (
               <div
                 key={index}
-                className={`${CELL} flex items-center font-mono text-[9px] leading-none tracking-[0.06em] text-foreground/35 max-[600px]:text-[8px]`}
+                className={`${CELL} text-foreground/35 flex items-center font-mono text-[9px] leading-none tracking-[0.06em] max-[600px]:text-[8px]`}
               >
                 {weekday}
               </div>
@@ -172,7 +172,7 @@ export default async function ContributionGraph({
       <Link
         href={`https://github.com/${login}`}
         target="_blank"
-        className="mt-4 inline-flex items-center gap-1 font-mono text-[11px] tracking-[0.08em] text-foreground/45 transition-colors duration-200 motion-reduce:transition-none hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
+        className="text-foreground/45 hover:text-foreground focus-visible:outline-foreground mt-4 inline-flex items-center gap-1 font-mono text-[11px] tracking-[0.08em] transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 motion-reduce:transition-none"
       >
         github.com/{login}
         <ArrowUpRight size={12} />
