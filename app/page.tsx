@@ -59,15 +59,13 @@ export default function Home() {
         </div>
       </div>
 
-      <section id="projects" className="mb-4">
-        <div className="flex justify-start items-center gap-4 mt-8">
-          <h2 className="m-0 text-2xl font-bold">Selected Projects</h2>
-        </div>
+      <section id="projects" className="mb-4 w-full">
+        <div className="mt-8 m-0 text-xl font-bold">Selected Projects</div>
         <h3 className="text-lg text-muted mt-2 mb-4">
           A space for the work that best shows how I think and build...
         </h3>
+        <Projects />
       </section>
-      <Projects />
 
       <div className="mx-auto mt-8 mb-6 w-[80vw] max-w-page max-[580px]:w-full">
         <div className="flex mb-2 justify-between items-center">
