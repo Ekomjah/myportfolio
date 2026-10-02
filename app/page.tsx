@@ -59,17 +59,12 @@ export default function Home() {
         </div>
       </div>
 
-      <section
-        id="projects"
-        className="scroll-mt-[90px] rounded-[30px] bg-[#f8f8f8] mb-4 p-4"
-      >
+      <section id="projects" className="mb-4">
         <div className="flex justify-start items-center gap-4 mt-8">
-          <i className="fa-solid fa-screwdriver-wrench"></i>
-          <h2 className="m-0 text-[2rem] font-bold">Technologies</h2>
+          <h2 className="m-0 text-2xl font-bold">Selected Projects</h2>
         </div>
-        <h3 className="text-[1.3rem] text-[#5e5959] font-extralight">
-          Here are some of the languages and technologies I am conversant with
-          and what I’ve built with them:
+        <h3 className="text-lg text-muted mt-2 mb-4">
+          A space for the work that best shows how I think and build...
         </h3>
       </section>
       <Projects />
