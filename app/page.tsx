@@ -12,7 +12,7 @@ export default function Home() {
 
       <div
         id="description"
-        className="mx-auto mt-8 mb-6 text-lg text-muted space-y-2"
+        className="mx-auto mt-8 pb-8 text-lg text-muted space-y-2 border-b border-foreground/10"
       >
         <div>
           <p>Hi, I&apos;m Ekomjah Denis, a Full-stack Software Developer.</p>
@@ -58,6 +58,20 @@ export default function Home() {
           </Link>
         </div>
       </div>
+
+      <section
+        id="projects"
+        className="scroll-mt-[90px] rounded-[30px] bg-[#f8f8f8] mb-4 p-4"
+      >
+        <div className="flex justify-start items-center gap-4 mt-8">
+          <i className="fa-solid fa-screwdriver-wrench"></i>
+          <h2 className="m-0 text-[2rem] font-bold">Technologies</h2>
+        </div>
+        <h3 className="text-[1.3rem] text-[#5e5959] font-extralight">
+          Here are some of the languages and technologies I am conversant with
+          and what I’ve built with them:
+        </h3>
+      </section>
       <Projects />
 
       <div className="mx-auto mt-8 mb-6 w-[80vw] max-w-page max-[580px]:w-full">
@@ -74,31 +88,6 @@ export default function Home() {
         </div>
         <ContributionGraph login="ekomjah" />
       </div>
-
-      <section
-        id="projects"
-        className="scroll-mt-[90px] rounded-[30px] bg-[#f8f8f8] mb-4 p-4"
-      >
-        <div className="flex justify-start items-center gap-4 mt-8">
-          <i className="fa-solid fa-screwdriver-wrench"></i>
-          <h2 className="m-0 text-[2rem] font-bold">Technologies</h2>
-        </div>
-        <h3 className="text-[1.3rem] text-[#5e5959] font-extralight">
-          Here are some of the languages and technologies I am conversant with
-          and what I’ve built with them:
-        </h3>
-      </section>
-
-      <section id="contact" className="scroll-mt-[90px]">
-        <div className="flex justify-start items-center gap-4 mt-8">
-          <i className="fa-solid fa-envelope"></i>
-          <h2 className="m-0 text-[2rem] font-bold">Contact</h2>
-        </div>
-        <p>
-          Want to work together? Email me at{" "}
-          <a href="mailto:ekomjahedet@gmail.com">ekomjahedet@gmail.com</a>.
-        </p>
-      </section>
     </main>
   );
 }

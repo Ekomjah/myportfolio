@@ -7,21 +7,25 @@ interface Project {
   desc: string;
   icon: React.ReactNode;
 }
+
+const MEDIA =
+  "relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-md";
+const ICON = "size-10 text-foreground/70";
 const projects: Project[] = [
   {
     name: "Captura",
     status: "completed",
-    icon: <ScanSquare />,
+    icon: <ScanSquare size={40} />,
     image: "/projects/Captura.png",
-    url: "github.com/ekomjah/captura",
+    url: "https://github.com/ekomjah/captura",
     demo: "https://captura-captures.vercel.app",
     desc: "an asset capture, search, and store SaaS",
   },
   {
     name: "dortrl",
     status: "upcoming",
-    icon: <Cable />,
-    url: "github.com/ekomjah/dortrl",
+    icon: <Cable size={40} />,
+    url: "https://github.com/ekomjah/dortrl",
     // demo: "dortrl.vercel.app",
     desc: "a URL shortener and link management system",
   },
@@ -29,8 +33,8 @@ const projects: Project[] = [
     name: "Penny-wise",
     status: "completed",
     // image: "/projects/Penny-wise.png",
-    url: "github.com/ekomjah/penny-wise",
-    icon: <BadgeDollarSign />,
+    url: "https://github.com/ekomjah/penny-wise",
+    icon: <BadgeDollarSign size={40} />,
     // demo: "penny-wise.vercel.app",
     desc: "a personal finance management app",
   },
@@ -38,8 +42,8 @@ const projects: Project[] = [
     name: "Evendar",
     status: "upcoming",
     // image: "/projects/Evendar.png",
-    url: "github.com/ekomjah/evendar",
-    icon: <CalendarClock />,
+    url: "https://github.com/ekomjah/evendar",
+    icon: <CalendarClock size={40} />,
     // demo: "evendar.vercel.app",
     desc: "a calendar and event management app",
   },
@@ -51,25 +55,24 @@ import {
   Cable,
   BadgeDollarSign,
   CalendarClock,
+  Lock,
   ScanSquare,
 } from "lucide-react";
-import { geistMono, geistSans, inter } from "./fonts";
+import { geistSans, inter } from "./fonts";
 export default function Projects() {
   return (
     <div
-      className={` ${inter.className} grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4`}
+      className={` ${inter.className} grid grid-cols-1 gap-4 md:grid-cols-2 w-full`}
     >
       {projects.map((project) => {
         return (
-          <div
-            key={project?.name}
-            id="card"
-            aria-description="projects-card"
-            className="rounded-md border-gray-200 dark:border-gray-500 border p-2 flex flex-col"
+          <article
+            key={project.name}
+            className="flex flex-col gap-2 rounded-md border border-gray-200 p-2 dark:border-gray-900"
           >
             <Link
-              className="bg-gray-200 dark:bg-[#1c1c1c] p-4 rounded-md border border-white dark:border-gray-600"
-              href={project?.demo || "#"}
+              className={`${MEDIA} bg-gray-200 dark:bg-[#1c1c1c] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground`}
+              href={project.demo ?? project.url}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -77,29 +80,38 @@ export default function Projects() {
                 <Image
                   src={project.image}
                   alt={project.name}
-                  width={200}
-                  height={200}
-                  className="w-full rounded"
+                  fill
+                  sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  className="object-cover hover:transform hover:scale-105 transition-transform duration-200"
                 />
               ) : (
-                project.icon
+                <span
+                  className={`${ICON} hover:transform hover:scale-115 transition-transform duration-200`}
+                >
+                  {project.icon}
+                </span>
               )}
             </Link>
-            <div className="flex justify-between items-center gap-x-1">
-              <h2 className={`${inter.className} text-lg font-bold`}>
+
+            <div className="flex items-start justify-between gap-x-2">
+              <h2 className={`${inter.className} m-0 text-lg font-bold`}>
                 {project.name}
               </h2>
               <Link
-                className="bg-gray-200 rounded-full dark:bg-[#1c1c1c] p-0.5 border border-white dark:border-gray-600"
+                className="shrink-0 rounded-full border border-gray-300 p-0.5 dark:border-gray-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`${project.name} on GitHub`}
               >
                 <SiGithub size={16} />
               </Link>
             </div>
-            <div className={`${geistSans.className}`}>{project.desc}</div>
-          </div>
+
+            <p className={`${geistSans.className} m-0 text-sm`}>
+              {project.desc}
+            </p>
+          </article>
         );
       })}
     </div>
