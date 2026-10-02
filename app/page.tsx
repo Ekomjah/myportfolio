@@ -25,7 +25,7 @@ export default function Home() {
           <span className="pr-1">You can reach me via {"  "}</span>
           <Link
             href="mailto:ekomjahedet@gmail.com"
-            className="inline-flex items-center gap-[6px] align-middle no-underline text-black dark:text-white hover:underline"
+            className="inline-flex items-center gap-[4px] align-middle no-underline text-black dark:text-white hover:underline"
           >
             <Mail
               strokeWidth={2.5}
@@ -37,15 +37,18 @@ export default function Home() {
           <span>,</span>
           <Link
             href="https://x.com/ekz_dee"
-            className="inline-flex items-center gap-[6px] align-middle no-underline text-black dark:text-white hover:underline"
+            className="inline-flex items-center gap-[4px] align-middle no-underline text-black dark:text-white hover:underline"
           >
-            <SiX size={15} className="shrink-0 -translate-y-px" />
+            <SiX
+              size={15}
+              className="shrink-0 -translate-y-px stroke-current stroke-1"
+            />
             <span>@ekz_dee</span>
           </Link>
           <span className="pr-1">or see my code on</span>
           <Link
             href="https://github.com/ekomjah"
-            className="inline-flex items-center gap-[6px] align-middle no-underline text-black dark:text-white hover:underline"
+            className="inline-flex items-center gap-[4px] align-middle no-underline text-black dark:text-white hover:underline"
           >
             <SiGithub size={18} className="shrink-0 -translate-y-px" />
             <span>GitHub</span>
