@@ -5,6 +5,7 @@ import Navbar from "@/app/ui/Navbar";
 import { ThemeProvider } from "@/app/ui/ThemeProvider";
 
 import { Toaster } from "sonner";
+import Footer from "./ui/footer";
 
 export const metadata: Metadata = {
   title: "Ekomjah Denis | Full-stack Developer",
@@ -22,6 +23,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <ThemeProvider>
           <Navbar />
           {children}
+
+          <Footer />
         </ThemeProvider>
         <Toaster position="top-right" duration={1000} />
       </body>
