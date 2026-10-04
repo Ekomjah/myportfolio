@@ -5,7 +5,7 @@ export default function Footer() {
       <p className="m-0">
         © {new Date().getFullYear()} Ekomjah Denis. All rights reserved.
       </p>
-      <div className="max-w-page flex w-full flex-col gap-4 flex-wrap items-center md:justify-between md:flex-row">
+      <div className="max-w-page flex w-fit flex-col flex-wrap items-center gap-4 md:flex-row md:justify-between">
         <div className="text-muted flex flex-col gap-1 text-xs">
           <p className="m-0 text-justify">
             Built with Next.js and TypeScript. Deployed on Vercel.

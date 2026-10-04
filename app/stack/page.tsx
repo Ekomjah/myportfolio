@@ -2,7 +2,6 @@
 // app/ui/stack.tsx
 import type { LucideIcon } from "lucide-react";
 import { Webhook, Zap, ArrowRight, FlaskConical } from "lucide-react";
-import Link from "next/link";
 
 // Colour brand logos from the Devicon and gilbarbara/logos repos, served by jsDelivr
 const devicon = (name: string, variant = "original") =>
@@ -20,6 +19,7 @@ const groups: Group[] = [
       { name: "JavaScript", icon: devicon("javascript") },
       { name: "TypeScript", icon: devicon("typescript") },
       { name: "Python", icon: devicon("python") },
+      { name: "Go", icon: devicon("golang") },
     ],
   },
   {
@@ -89,7 +89,7 @@ function Logo({ icon }: { icon: Item["icon"] }) {
           width={18}
           height={18}
           loading="lazy"
-          className="size-[18px] object-contain"
+          className="size-4.5 object-contain"
         />
       </span>
     );
@@ -106,15 +106,12 @@ function Logo({ icon }: { icon: Item["icon"] }) {
 export default function Stack() {
   return (
     <main className="max-w-page mx-auto p-8 pt-4">
-      <Link
-        href="/projects"
-        className="group m-0 mt-8 flex w-fit items-center gap-2 text-xl font-bold"
-      >
+      <div className="group m-0 mt-8 flex w-fit items-center gap-2 text-xl font-bold">
         <span className="group-hover:text-muted transition-colors duration-200">
           My Stack
         </span>
         <ArrowRight className="shrink-0 transition-transform duration-200 group-hover:translate-x-1" />
-      </Link>
+      </div>
       <h3 className="text-muted mt-2 mb-4 text-lg">
         An overview of the tools i use to craft and bring to life, my innovative
         ideas

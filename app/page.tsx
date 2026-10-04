@@ -17,14 +17,14 @@ export default function Home() {
         id="projects"
         className="border-foreground/10 w-full border-b pb-12"
       >
-        <div className="flex items-end justify-between gap-4">
+        <div className="mb-4 flex items-end justify-between gap-4">
           <div>
-            <h2 className="group m-0 mt-8 flex w-fit items-center gap-2 text-xl font-bold">
+            <h2 className="group m-0 mt-8 flex w-fit items-center text-xl font-bold">
               <span className="group-hover:text-muted transition-colors duration-200">
                 Selected Projects
               </span>{" "}
             </h2>
-            <p className="text-foreground/60 mt-2 mb-4 text-sm">
+            <p className="text-foreground/60 text-sm">
               A space for the work that best shows how I think and build...
             </p>
           </div>
@@ -38,6 +38,7 @@ export default function Home() {
             <ArrowRight className="size-4 shrink-0 transition-transform duration-200 group-hover:translate-x-1 group-focus-visible:translate-x-1" />
           </Link>
         </div>
+
         <Projects />
       </section>
       <section id="projects" className="mb-4 w-full">

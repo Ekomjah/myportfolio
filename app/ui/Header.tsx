@@ -1,5 +1,4 @@
 import Image from "next/image";
-import SocialLinks from "./icons/socials";
 interface HeaderProps {
   inter: { className: string };
   lusitana: { className: string };
