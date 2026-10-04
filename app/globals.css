@@ -44,3 +44,40 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
 }
+
+/* Contribution calendar tiles.
+   Wide containers keep the original 12px/3px tiles untouched. Below 700px the
+   tiles scale down so the year fits when it can, but never below 9px: a full
+   53-week year cannot be legible on a phone, so there the grid scrolls with a
+   fade instead of shrinking into a dot pattern. */
+.contrib-frame {
+  container-type: inline-size;
+}
+
+.contrib {
+  --gutter: 24px;
+  --gap: 3px;
+  --cell: 12px;
+}
+
+.contrib-scroll {
+  overflow-x: auto;
+}
+
+@container (width < 700px) {
+  .contrib {
+    --gap: 2px;
+    --cell: clamp(
+      9px,
+      calc((100cqw - 32px - var(--gutter) - 52 * var(--gap)) / 53),
+      12px
+    );
+  }
+}
+
+/* 9px tiles plus 2px gaps need 637px; below that the strip overflows. */
+@container (width < 637px) {
+  .contrib-scroll {
+    mask-image: linear-gradient(to right, #000 calc(100% - 32px), transparent);
+  }
+}

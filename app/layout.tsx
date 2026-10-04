@@ -19,7 +19,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased motion-safe:scroll-smooth`}
     >
-      <body className="flex flex-col">
+      <body className="flex min-h-full flex-col">
         <ThemeProvider>
           <Navbar />
           {children}

@@ -1,34 +1,49 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, FaceSlightlyFrowning } from "lucide-react";
+import { Search } from "lucide-react";
 
 export default function NotFound() {
   return (
-    <main className="relative isolate flex h-dvh w-full flex-col items-center justify-center overflow-hidden bg-black">
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-[url('/404.webp')] bg-cover bg-center bg-no-repeat opacity-70"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-gradient-to-b from-black/40 via-black/60 to-black/80"
-      />
+    <main className="bg-background text-foreground flex w-full flex-1 flex-col">
+      <div className="bg-white relative h-[34dvh] min-h-[200px] w-full overflow-hidden">
+        <Image
+          src="/404.webp"
+          alt=""
+          aria-hidden="true"
+          fill
+          sizes="100vw"
+          priority
+          className="object-contain object-center"
+        />
+      </div>
 
-      <div className="flex max-w-[36rem] flex-col items-center gap-3 px-6 text-center">
-        <FaceSlightlyFrowning size={60} className="text-white/70" />
-        <h1 className="m-0 text-[44px] leading-none tracking-tight text-white sm:text-[64px]">
-          Page not found
+      <div className="flex flex-1 flex-col items-center justify-center gap-4 px-6 py-10 text-center">
+        <h1 className="text-muted m-0 font-mono text-[13px] tracking-[0.18em] uppercase">
+          404
         </h1>
-        <p className="m-0 max-w-[30rem] text-[15px] leading-relaxed text-white/70">
-          That page doesn&apos;t exist, or it has moved somewhere I haven&apos;t
-          found yet.
+        <p className="m-0 max-w-[34rem] text-2xl leading-snug font-medium sm:text-3xl">
+          This is not the web page you are looking for.
         </p>
-        <Link
-          href="/"
-          className="mt-4 inline-flex items-center gap-2 rounded-full border border-white/25 px-5 py-2.5 text-sm font-medium text-white transition-colors duration-200 hover:border-white/60 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white motion-reduce:transition-none"
-        >
-          <ArrowLeft size={16} />
-          Back to home
-        </Link>
+        <p className="text-muted m-0 max-w-[34rem] text-base leading-relaxed">
+          The page may have been moved or renamed. Try searching for it, or head
+          back to the homepage.
+        </p>
+
+        <div className="mt-2 flex flex-wrap items-center justify-center gap-3">
+          <Link
+            href="/"
+            className="bg-foreground text-background hover:bg-foreground/85 focus-visible:outline-foreground inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-[15px] font-medium transition-colors duration-200 active:translate-y-px motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-offset-2"
+          >
+            Back to home
+          </Link>
+          <Link
+            href="/projects"
+            className="border-foreground/20 bg-foreground/[0.03] text-foreground hover:border-foreground/40 hover:bg-foreground/[0.06] focus-visible:outline-foreground inline-flex items-center gap-2 rounded-full border px-5 py-2.5 text-[15px] font-medium transition-colors duration-200 active:translate-y-px motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-offset-2"
+          >
+            <Search size={16} className="shrink-0" />
+            Browse projects
+          </Link>
+        </div>
       </div>
     </main>
   );

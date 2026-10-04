@@ -59,9 +59,9 @@ type Week = { contributionDays: Day[] };
 
 type Calendar = { totalContributions: number; weeks: Week[] };
 
-const CELL = "size-[12px] max-[600px]:size-[10px]";
-const CELL_W = "w-[12px] max-[600px]:w-[10px]";
-const GAP = "gap-[3px] max-[600px]:gap-[2px]";
+const CELL = "size-[var(--cell)]";
+const CELL_W = "w-[var(--cell)]";
+const GAP = "gap-[var(--gap)]";
 
 async function getContributions(login: string) {
   const res = await fetch("https://api.github.com/graphql", {
@@ -113,70 +113,53 @@ export default async function ContributionGraph({
           {totalContributions.toLocaleString("en-US")} contributions in the last
           12 months
         </p>
-        <div
-          aria-hidden="true"
-          className="text-foreground/40 flex items-center gap-[6px] font-mono text-[11px]"
-        >
-          <span>less</span>
-          {LEVELS.map((level) => (
-            <span key={level} className={`${CELL} rounded-[2px] ${level}`} />
-          ))}
-          <span>more</span>
-        </div>
       </div>
 
       <div
         tabIndex={0}
         role="group"
         aria-label="Daily contributions calendar, scrolls sideways"
-        className="focus-visible:outline-foreground overflow-x-auto rounded-2xl p-4 focus-visible:outline-2 focus-visible:outline-offset-4 max-[1100px]:mask-[linear-gradient(to_right,#000_calc(100%-32px),transparent)] [&::-webkit-scrollbar]:hidden"
+        className="contrib-frame focus-visible:outline-foreground rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-4"
       >
-        <div aria-hidden="true" className="flex w-max">
-          <div className={`flex flex-col ${GAP} pt-[20px] pr-2`}>
-            {WEEKDAYS.map((weekday, index) => (
-              <div
-                key={index}
-                className={`${CELL} text-foreground/35 flex items-center font-mono text-[9px] leading-none tracking-[0.06em] max-[600px]:text-[8px]`}
-              >
-                {weekday}
-              </div>
-            ))}
-          </div>
-
-          <div>
-            <div className={`grid grid-flow-col grid-rows-1 ${GAP} mb-[7px]`}>
-              {labels.map((label, index) => (
-                <div key={index} className={`${CELL_W} relative h-[13px]`}>
-                  {label && (
-                    <span className="absolute bottom-0 left-0 font-mono text-[11px] leading-none tracking-[0.06em] whitespace-nowrap text-neutral-500 max-[600px]:text-[10px]">
-                      {label}
-                    </span>
-                  )}
+        <div className="contrib-scroll p-4 [&::-webkit-scrollbar]:hidden">
+          <div aria-hidden="true" className="contrib flex w-max">
+            <div className={`flex flex-col ${GAP} pt-[20px] pr-2`}>
+              {WEEKDAYS.map((weekday, index) => (
+                <div
+                  key={index}
+                  className={`${CELL} text-foreground/35 flex items-center font-mono text-[9px] leading-none tracking-[0.06em]`}
+                >
+                  {weekday}
                 </div>
               ))}
             </div>
 
-            <div className={`grid grid-flow-col grid-rows-7 ${GAP}`}>
-              {days.map((day) => (
-                <span
-                  key={day.date}
-                  title={`${day.contributionCount} contributions on ${day.date}`}
-                  className={`${CELL} rounded-[2px] ${LEVEL_CLASS[day.contributionLevel] ?? LEVEL_CLASS.NONE}`}
-                />
-              ))}
+            <div>
+              <div className={`grid grid-flow-col grid-rows-1 ${GAP} mb-[7px]`}>
+                {labels.map((label, index) => (
+                  <div key={index} className={`${CELL_W} relative h-[13px]`}>
+                    {label && (
+                      <span className="absolute bottom-0 left-0 font-mono text-[11px] leading-none tracking-[0.06em] whitespace-nowrap text-neutral-500">
+                        {label}
+                      </span>
+                    )}
+                  </div>
+                ))}
+              </div>
+
+              <div className={`grid grid-flow-col grid-rows-7 ${GAP}`}>
+                {days.map((day) => (
+                  <span
+                    key={day.date}
+                    title={`${day.contributionCount} contributions on ${day.date}`}
+                    className={`${CELL} rounded-[2px] ${LEVEL_CLASS[day.contributionLevel] ?? LEVEL_CLASS.NONE}`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-      <Link
-        href={`https://github.com/${login}`}
-        target="_blank"
-        className="text-foreground/45 hover:text-foreground focus-visible:outline-foreground mt-4 inline-flex items-center gap-1 font-mono text-[11px] tracking-[0.08em] transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 motion-reduce:transition-none"
-      >
-        github.com/{login}
-        <ArrowUpRight size={12} />
-      </Link>
     </section>
   );
 }

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import SocialLinks from "./icons/socials";
 interface HeaderProps {
   inter: { className: string };
   lusitana: { className: string };
@@ -30,6 +31,10 @@ export default function Header({ inter, lusitana }: HeaderProps) {
         >
           Ekomjah Denis
         </h1>
+
+        <div className="mt-5">
+          <SocialLinks />
+        </div>
       </div>
     </header>
   );

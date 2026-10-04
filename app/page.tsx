@@ -1,6 +1,12 @@
 import ContributionGraph from "./ui/ContributionGraph";
 import { lusitana, inter } from "./ui/fonts";
-import { Mail, ArrowUpRight } from "lucide-react";
+import {
+  Mail,
+  ArrowUpRight,
+  Navigation,
+  FolderBookmark,
+  ArrowRight,
+} from "lucide-react";
 import { SiGithub, SiX } from "@icons-pack/react-simple-icons";
 import Link from "next/link";
 import Header from "./ui/Header";
@@ -15,14 +21,15 @@ export default function Home() {
         id="description"
         className="text-muted border-foreground/10 mx-auto mt-8 space-y-2 border-b pb-8 text-lg"
       >
-        <div>
-          <p>Hi, I&apos;m Ekomjah Denis, a Full-stack Software Developer.</p>
-          <p>
-            {" "}
+        <div className="max-w-[60ch] space-y-3">
+          <p className="m-0">
+            Hi, I&apos;m Ekomjah Denis, a full-stack software developer.
+          </p>
+          <p className="m-0">
             My skills span frontend and backend development, from optimizing
             page-load performance to building, deploying and scaling full-stack
-            applications. I also work with design systems, state architecture
-            and authentication
+            applications. I also work with design systems, state architecture,
+            and authentication.
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-x-1">
@@ -66,10 +73,40 @@ export default function Home() {
             <span>GitHub</span>
           </Link>
         </div>
+        <div className="mt-6 mb-3 flex flex-wrap items-center gap-3">
+          <Link
+            href="#projects"
+            className="group bg-foreground text-background hover:bg-foreground/85 focus-visible:outline-foreground inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-[15px] font-medium transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 active:translate-y-px motion-reduce:transition-none"
+          >
+            <FolderBookmark size={18} className="shrink-0" />
+            <span>See my best work</span>
+          </Link>
+          <Link
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group border-foreground/20 bg-foreground/[0.03] text-foreground hover:border-foreground/40 hover:bg-foreground/[0.06] focus-visible:outline-foreground inline-flex items-center gap-2 rounded-full border px-5 py-2.5 text-[15px] font-medium transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 active:translate-y-px motion-reduce:transition-none"
+          >
+            <Navigation size={18} className="shrink-0" />
+            <span>View my Resumé</span>
+            <ArrowUpRight
+              size={15}
+              className="shrink-0 opacity-50 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transition-none"
+            />
+          </Link>
+        </div>
       </div>
 
       <section id="projects" className="mb-4 w-full">
-        <div className="m-0 mt-8 text-xl font-bold">Selected Projects</div>
+        <Link
+          href="/projects"
+          className="group m-0 mt-8 flex w-fit items-center gap-2 text-xl font-bold"
+        >
+          <span className="group-hover:text-muted transition-colors duration-200">
+            Selected Projects
+          </span>
+          <ArrowRight className="shrink-0 transition-transform duration-200 group-hover:translate-x-1" />
+        </Link>
         <h3 className="text-muted mt-2 mb-4 text-lg">
           A space for the work that best shows how I think and build...
         </h3>

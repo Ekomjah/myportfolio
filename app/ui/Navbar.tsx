@@ -37,8 +37,8 @@ export default function NavBar() {
     <header className="border-foreground/10 bg-background/85 supports-[backdrop-filter]:bg-background/70 sticky top-0 z-50 border-b backdrop-blur-md">
       <div className="max-w-page mx-auto flex w-[80vw] items-center justify-between gap-[12px] p-4 px-[16px] max-[580px]:w-full md:p-2">
         <div className="flex items-center gap-4">
-          <a
-            href="#home"
+          <Link
+            href="/"
             aria-label="Ekomjah Denis, back to top"
             className="focus-visible:outline-foreground shrink-0 rounded-full focus-visible:outline-2 focus-visible:outline-offset-2"
           >
@@ -49,7 +49,7 @@ export default function NavBar() {
               height={80}
               className="ring-foreground/20 size-[40px] rounded-full object-cover ring-1 max-[420px]:size-[36px]"
             />
-          </a>
+          </Link>
 
           <nav
             aria-label="Primary"
