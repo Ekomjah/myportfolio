@@ -108,7 +108,7 @@ export default function Projects() {
                 {project.name}
               </h2>
               <Link
-                className="focus-visible:outline-foreground shrink-0 rounded-full border border-gray-300 p-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 dark:border-gray-600"
+                className="focus-visible:outline-foreground shrink-0 rounded-full border border-gray-300 p-0.5 transition-transform duration-200 hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 dark:border-gray-600"
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"

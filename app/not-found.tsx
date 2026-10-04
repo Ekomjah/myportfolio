@@ -18,9 +18,6 @@ export default function NotFound() {
       </div>
 
       <div className="flex flex-1 flex-col items-center justify-center gap-4 px-6 py-10 text-center">
-        <h1 className="text-muted m-0 font-mono text-[13px] tracking-[0.18em] uppercase">
-          404
-        </h1>
         <p className="m-0 max-w-[34rem] text-2xl leading-snug font-medium sm:text-3xl">
           This is not the web page you are looking for.
         </p>
