@@ -105,7 +105,7 @@ function Logo({ icon }: { icon: Item["icon"] }) {
 
 export default function Stack() {
   return (
-    <main className="max-w-page mx-auto pb-8">
+    <main className="max-w-page mx-auto p-8 pt-4">
       <Link
         href="/projects"
         className="group m-0 mt-8 flex w-fit items-center gap-2 text-xl font-bold"

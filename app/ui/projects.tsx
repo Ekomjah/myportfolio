@@ -19,7 +19,7 @@ const projects: Project[] = [
     image: "/projects/Captura.png",
     url: "https://github.com/ekomjah/captura",
     demo: "https://captura-captures.vercel.app",
-    desc: "an asset capture, search, and store SaaS",
+    desc: "An asset capture, search, and store SaaS",
   },
   {
     name: "Penny-wise",
@@ -28,7 +28,7 @@ const projects: Project[] = [
     url: "https://github.com/ekomjah/penny-wise",
     icon: <BadgeDollarSign size={40} />,
     // demo: "penny-wise.vercel.app",
-    desc: "a personal finance management app",
+    desc: "A finance literacy app",
   },
   {
     name: "dortrl",
@@ -36,7 +36,7 @@ const projects: Project[] = [
     icon: <Cable size={40} />,
     url: "https://github.com/ekomjah/dortrl",
     // demo: "dortrl.vercel.app",
-    desc: "a URL shortener and link management system",
+    desc: "A URL shortener and link management system",
   },
   {
     name: "Evendar",
@@ -45,7 +45,7 @@ const projects: Project[] = [
     url: "https://github.com/ekomjah/evendar",
     icon: <CalendarClock size={40} />,
     // demo: "evendar.vercel.app",
-    desc: "a calendar scheduling software",
+    desc: "A calendar scheduling software",
   },
 ];
 import { SiGithub } from "@icons-pack/react-simple-icons";

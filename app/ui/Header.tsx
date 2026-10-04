@@ -31,10 +31,6 @@ export default function Header({ inter, lusitana }: HeaderProps) {
         >
           Ekomjah Denis
         </h1>
-
-        <div className="mt-5">
-          <SocialLinks />
-        </div>
       </div>
     </header>
   );
