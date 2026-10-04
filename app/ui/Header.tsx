@@ -30,7 +30,11 @@ export default function Header({ inter, lusitana }: HeaderProps) {
         >
           Ekomjah Denis
         </h1>
-        <p>Open to Work</p>
+        <p
+          className={`${lusitana.className} text-muted mt-4 max-w-[30ch] text-[18px] leading-snug sm:text-[20px]`}
+        >
+          Open to new work.
+        </p>
       </div>
     </header>
   );
