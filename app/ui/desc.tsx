@@ -15,7 +15,7 @@ export default function Description() {
           and ship full-stack applications — from the first pixel to deployed
           and scaled.
         </p>
-        <p className="text-muted m-0">
+        <p className="text-muted-foreground m-0">
           Day to day that means page-load performance, design systems, state
           architecture, and authentication.
         </p>

@@ -19,10 +19,8 @@ export default function Home() {
       >
         <div className="mb-4 flex items-end justify-between gap-4">
           <div>
-            <h2 className="group m-0 mt-8 flex w-fit items-center text-xl font-bold">
-              <span className="group-hover:text-muted transition-colors duration-200">
-                Selected Projects
-              </span>{" "}
+            <h2 className="group m-0 mt-4 flex w-fit items-center text-xl font-bold">
+              <span>Selected Projects</span>{" "}
             </h2>
             <p className="text-foreground/60 text-sm">
               A space for the work that best shows how I think and build...
@@ -32,7 +30,7 @@ export default function Home() {
             href="/projects"
             className="group flex shrink-0 items-center gap-2 text-sm font-medium"
           >
-            <span className="group-hover:text-muted transition-colors duration-200">
+            <span className="group-hover:text-muted-foreground transition-colors duration-200">
               See everything
             </span>
             <ArrowRight className="size-4 shrink-0 transition-transform duration-200 group-hover:translate-x-1 group-focus-visible:translate-x-1" />

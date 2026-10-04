@@ -75,7 +75,7 @@ export default function Stack() {
           href="/stack"
           className="group flex shrink-0 items-center gap-2 text-sm font-medium"
         >
-          <span className="group-hover:text-muted transition-colors duration-200">
+          <span className="group-hover:text-muted-foreground transition-colors duration-200">
             See everything
           </span>
           <ArrowRight className="size-4 shrink-0 transition-transform duration-200 group-hover:translate-x-1 group-focus-visible:translate-x-1" />

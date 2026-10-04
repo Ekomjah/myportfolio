@@ -8,7 +8,7 @@ export default function ProjectsPage() {
     >
       <div>
         <h2 className="group m-0 mt-8 flex w-fit items-center text-xl font-bold">
-          <span className="group-hover:text-muted transition-colors duration-200">
+          <span className="group-hover:text-muted-foreground transition-colors duration-200">
             Selected Projects
           </span>{" "}
         </h2>

@@ -6,6 +6,10 @@ import { ThemeProvider } from "@/app/ui/ThemeProvider";
 
 import { Toaster } from "sonner";
 import Footer from "./ui/footer";
+import { Inter } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
   title: "Ekomjah Denis | Full-stack Developer",
@@ -17,7 +21,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased motion-safe:scroll-smooth`}
+      className={cn("h-full", "antialiased", "motion-safe:scroll-smooth", geistSans.variable, geistMono.variable, "font-sans", inter.variable)}
     >
       <body className="flex min-h-full flex-col">
         <ThemeProvider>
