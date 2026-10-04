@@ -5,6 +5,7 @@ import { SiGithub, SiX } from "@icons-pack/react-simple-icons";
 import Link from "next/link";
 import Header from "./ui/Header";
 import Projects from "./ui/projects";
+import LinkedIn from "./ui/icons/LinkedIn";
 export default function Home() {
   return (
     <main className="max-w-page mx-auto flex min-h-full w-full flex-col items-center justify-center p-8">
@@ -37,7 +38,7 @@ export default function Home() {
             />
             <span>email</span>
           </Link>
-          <span>,</span>
+          <span>, connect on</span>
           <Link
             href="https://x.com/ekz_dee"
             className="inline-flex items-center gap-[4px] align-middle text-black no-underline hover:underline dark:text-white"
@@ -48,7 +49,15 @@ export default function Home() {
             />
             <span>@ekz_dee</span>
           </Link>
-          <span className="pr-1">or see my code on</span>
+          <span>or</span>
+          <Link
+            href="https://www.linkedin.com/in/ekomjah"
+            className="inline-flex items-center gap-[4px] align-middle text-black no-underline hover:underline dark:text-white"
+          >
+            <LinkedIn className="size-[18px] shrink-0" />
+            <span>Ekomjah</span>
+          </Link>
+          <span className="pr-1">You can also see my code on</span>
           <Link
             href="https://github.com/ekomjah"
             className="inline-flex items-center gap-[4px] align-middle text-black no-underline hover:underline dark:text-white"
@@ -69,7 +78,7 @@ export default function Home() {
 
       <div className="max-w-page mx-auto mt-8 mb-6 w-[80vw] max-[580px]:w-full">
         <div className="mb-2 flex items-center justify-between">
-          <p>Github Activity</p>
+          <p className="text-lg font-semibold">Github Activity</p>
           <Link
             href="https://github.com/ekomjah"
             className="inline-flex items-center gap-[4px] align-middle text-black no-underline hover:underline dark:text-white"
