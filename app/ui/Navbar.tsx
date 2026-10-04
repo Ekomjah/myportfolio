@@ -59,8 +59,6 @@ export default function NavBar() {
               {SECTIONS.map(({ id, label }) => (
                 <li key={id} className="shrink-0">
                   <Link
-                    target="_blank"
-                    rel="noopener noreferrer"
                     href={`/${id}`}
                     className="text-foreground/55 hover:text-foreground focus-visible:outline-foreground flex items-center gap-[6px] rounded-full px-[12px] py-[8px] text-[15px] font-medium transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 motion-reduce:transition-none"
                   >

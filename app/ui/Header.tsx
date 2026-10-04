@@ -30,6 +30,7 @@ export default function Header({ inter, lusitana }: HeaderProps) {
         >
           Ekomjah Denis
         </h1>
+        <p>Open to Work</p>
       </div>
     </header>
   );
