@@ -29,12 +29,16 @@ export default function Header({ inter, lusitana }: HeaderProps) {
           className={`${lusitana.className} text-foreground m-0 mt-3 text-[42px] leading-[1.04] tracking-tight sm:text-[56px]`}
         >
           Ekomjah Denis
-        </h1>
-        <p
-          className={`${lusitana.className} text-muted-foreground mt-4 max-w-[30ch] text-[18px] leading-snug sm:text-[20px]`}
+        </h1>{" "}
+        <span
+          className={`${inter.className} border-foreground/15 text-foreground mt-4 inline-flex items-center gap-2.5 rounded-full border px-3.5 py-1.5 text-sm font-medium`}
         >
-          Open to new work.
-        </p>
+          <span className="relative flex size-2" aria-hidden="true">
+            <span className="absolute inline-flex size-full rounded-full bg-emerald-500/60 motion-safe:animate-ping" />
+            <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />
+          </span>
+          Open to new work
+        </span>
       </div>
     </header>
   );
