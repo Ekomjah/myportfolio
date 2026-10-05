@@ -19,7 +19,7 @@ const groups: Group[] = [
       { name: "JavaScript", icon: devicon("javascript") },
       { name: "TypeScript", icon: devicon("typescript") },
       { name: "Python", icon: devicon("python") },
-      { name: "Go", icon: devicon("golang") },
+      { name: "Go", icon: devicon("go") },
     ],
   },
   {
@@ -28,6 +28,10 @@ const groups: Group[] = [
       { name: "Figma", icon: devicon("figma") },
       { name: "React", icon: devicon("react") },
       { name: "Next.js", icon: devicon("nextjs") },
+      {
+        name: "Shadcn",
+        icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/shadcnui.svg",
+      },
     ],
   },
   {
@@ -49,6 +53,7 @@ const groups: Group[] = [
       { name: "Vitest", icon: devicon("vitest") },
       { name: "Playwright", icon: devicon("playwright") },
       { name: "Supertest", icon: FlaskConical },
+      { name: "Postman", icon: devicon("postman") },
     ],
   },
   {
