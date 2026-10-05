@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Globe } from "lucide-react";
 import { lusitana } from "@/app/ui/fonts";
+import { SiGithub } from "@icons-pack/react-simple-icons";
 
 export const metadata: Metadata = {
   title: "Captura | Ekomjah Denis",
@@ -77,7 +78,7 @@ export default function CapturaPage() {
             aria-label="View the Captura live demo (opens in a new tab)"
             className="border-border bg-background hover:bg-muted focus-visible:outline-foreground hover:text-foreground focus-visible:ring-ring/50 inline-flex h-9 items-center gap-1.5 rounded-lg border px-3.5 text-sm font-semibold transition-colors focus-visible:ring-3 focus-visible:outline-none"
           >
-            View project
+            <Globe /> View project
             <ArrowUpRight className="size-4" />
           </a>
           <a
@@ -87,7 +88,7 @@ export default function CapturaPage() {
             aria-label="View the Captura source on GitHub (opens in a new tab)"
             className="border-border bg-background hover:bg-muted focus-visible:outline-foreground hover:text-foreground focus-visible:ring-ring/50 inline-flex h-9 items-center gap-1.5 rounded-lg border px-3.5 text-sm font-semibold transition-colors focus-visible:ring-3 focus-visible:outline-none"
           >
-            Source
+            <SiGithub /> Source
             <ArrowUpRight className="size-4" />
           </a>
         </div>
@@ -119,7 +120,7 @@ export default function CapturaPage() {
           variants, extracts its text, and serves the lot over signed URLs.
         </p>
 
-        <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-2xl">
+        <div className="relative mt-8 aspect-[16/9] w-full overflow-hidden rounded-2xl">
           <Image
             src="/projects/captura/dashboard.png"
             alt="Captura's landing page, showing the search-focused hero and the three feature cards beneath it."
@@ -152,7 +153,7 @@ export default function CapturaPage() {
         </div>
         <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-2xl">
           <Image
-            src="/projects/captura/asset.png"
+            src="/projects/captura/asset-view.png"
             alt="Captura's landing page, showing the search-focused hero and the three feature cards beneath it."
             fill
             priority

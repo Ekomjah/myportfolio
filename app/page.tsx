@@ -19,7 +19,7 @@ export default function Home() {
       >
         <div className="mb-4 flex items-end justify-between gap-4">
           <div>
-            <h2 className="group m-0 mt-4 flex w-fit items-center text-xl font-bold">
+            <h2 className="group m-0 mt-8 flex w-fit items-center text-xl font-bold">
               <span>Selected Projects</span>{" "}
             </h2>
             <p className="text-foreground/60 text-sm">
