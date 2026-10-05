@@ -34,16 +34,6 @@ const projects: Project[] = [
     detailsUrl: "/projects/penny-wise",
   },
   {
-    name: "Huntmart",
-    status: "completed",
-    icon: <ShoppingBag size={40} />,
-    url: "https://github.com/ekomjah/huntmart",
-    demo: "https://huntmart.netlify.app/shop",
-    desc: "An e-commerce platform",
-    detailsUrl: "/projects/huntmart",
-    image: "/projects/huntmart/shop.png",
-  },
-  {
     name: "dortrl",
     status: "upcoming",
     icon: <Cable size={40} />,
@@ -60,6 +50,16 @@ const projects: Project[] = [
     // demo: "evendar.vercel.app",
     desc: "A calendar scheduling software",
   },
+  {
+    name: "Huntmart",
+    status: "completed",
+    icon: <ShoppingBag size={40} />,
+    url: "https://github.com/ekomjah/huntmart",
+    demo: "https://huntmart.netlify.app/shop",
+    desc: "An e-commerce platform",
+    detailsUrl: "/projects/huntmart",
+    image: "/projects/huntmart/shop.png",
+  },
 ];
 import { SiGithub } from "@icons-pack/react-simple-icons";
 import Image from "next/image";
@@ -73,12 +73,16 @@ import {
   ShoppingBag,
 } from "lucide-react";
 import { geistSans, inter } from "./fonts";
-export default function Projects() {
+
+interface ProjectProps {
+  offset?: number;
+}
+export default function Projects({ offset = projects.length }: ProjectProps) {
   return (
     <div
       className={` ${inter.className} grid w-full grid-cols-1 gap-4 md:grid-cols-2`}
     >
-      {projects.map((project) => {
+      {projects.slice(0, offset).map((project) => {
         const locked = project.status !== "completed";
 
         return (

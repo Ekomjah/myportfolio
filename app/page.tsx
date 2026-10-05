@@ -37,7 +37,7 @@ export default function Home() {
           </Link>
         </div>
 
-        <Projects />
+        <Projects offset={4} />
       </section>
       <section id="projects" className="mb-4 w-full">
         <Stack />
