@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, ArrowUpRight, Users } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Users } from "lucide-react";
 import { lusitana } from "@/app/ui/fonts";
+import { RelatedProjects } from "@/app/ui/related-projects";
 import { SiGithub } from "@icons-pack/react-simple-icons";
 
 export const metadata: Metadata = {
-  title: "Penny Wise | Ekomjah Denis",
+  title: "Penny Wise",
   description:
     "Penny Wise is a financial-literacy app for pre-teens and teens — short two-minute Tutorials and open-ended Labs that teach counting money, making change and simple budgeting.",
+  alternates: { canonical: "/projects/penny-wise" },
 };
 
 const shots = [
@@ -198,15 +200,7 @@ export default function PennyWisePage() {
         </p>
       </div>
 
-      <div className="mt-16">
-        <Link
-          href="/projects"
-          className="group focus-visible:outline-foreground inline-flex w-fit items-center gap-1 transition-opacity duration-200 hover:opacity-60 focus-visible:outline-2 focus-visible:outline-offset-4 motion-reduce:transition-none"
-        >
-          <span className="text-lg font-medium">Other Projects</span>
-          <ArrowRight className="size-4 shrink-0 transition-transform duration-200 group-hover:translate-x-1 group-focus-visible:translate-x-1 motion-reduce:transition-none" />
-        </Link>
-      </div>
+      <RelatedProjects current="Penny Wise" />
     </div>
   );
 }

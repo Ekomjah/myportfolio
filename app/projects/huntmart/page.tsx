@@ -7,47 +7,63 @@ import { RelatedProjects } from "@/app/ui/related-projects";
 import { SiGithub } from "@icons-pack/react-simple-icons";
 
 export const metadata: Metadata = {
-  title: "Captura",
+  title: "Hunt Mart",
   description:
-    "Captura turns a raw screenshot upload into a searchable, multi-format cloud asset — storing the original, generating optimized variants, and indexing text via OCR.",
-  alternates: { canonical: "/projects/captura" },
+    "Hunt Mart is a full e-commerce front end built with React and Vite — Algolia search with shareable URL state, a Zustand cart, Firebase auth and data, and Algolia InstantSearch tuned to stop the page freezing on every keystroke.",
+  alternates: { canonical: "/projects/huntmart" },
 };
+
+const shots = [
+  {
+    src: "/projects/huntmart/shop.png",
+    alt: "Hunt Mart's storefront: a hero carousel above category tiles for Electronics, Home Decor, Fashion and Groceries, with cart, message and notification counts in the app bar.",
+  },
+  {
+    src: "/projects/huntmart/product-search.png",
+    alt: "Search results for the query 'laptops', returning seven products — including a backpack whose description contains the word 'laptops' and matches out of the box.",
+  },
+  {
+    src: "/projects/huntmart/product-desc.png",
+    alt: "A product detail page for a Generic Motorcycle, showing the discounted price, star rating, image gallery, stock count and a details tab.",
+  },
+];
 
 const workflow = [
   {
-    term: "In-memory transcoding",
-    body: "Pillow converts each upload straight into WebP and JPEG variants in memory. Nothing touches the disk on the way through, so there is no temp directory to clean up and no path-traversal surface to reason about.",
+    term: "Search state lives in the URL",
+    body: "Query, page and refinements route as /shop/search?q=laptop&page=2&category=beauty, so a result set is a shareable link and the back button behaves. Writes go through React Router's navigate, which keeps it the single owner of history.",
   },
   {
-    term: "OCR on upload",
-    body: "PyTesseract reads the image the moment it lands, so the screenshot becomes findable immediately rather than after a background pass. You upload an error log, close the tab, and search for it later.",
+    term: "Widgets mount unconditionally",
+    body: "Mounting an InstantSearch widget calls addWidgets, which schedules another search. Rendering <Hits> only on the success path meant every resolved search fired a fresh one — about eight requests a second, forever. Now every widget registers up front and status only decides what is painted.",
   },
   {
-    term: "Private by default",
-    body: "The bucket has no public access. Every download is a presigned S3 URL that expires after fifteen minutes, so a leaked link stops working on its own.",
+    term: "query is never set on Configure",
+    body: "The query prop is reserved; InstantSearch owns it and routes it. Passing it anyway fought the router and duplicated work. Search goes through useSearchBox().refine() instead.",
   },
   {
-    term: "Indexed for search",
-    body: "ocr_text carries a GIN index in PostgreSQL, and /v1/search queries straight against it. Full-text search over the inside of an image, without a separate search service.",
+    term: "Cart lives in one store",
+    body: "Zustand holds cart state globally, so any component reads and mutates it without prop drilling — add, decrement and remove all update the badge count immediately.",
   },
 ];
 
 const architecture = [
-  { label: "API", items: ["FastAPI", "Pydantic"] },
-  { label: "Image processing", items: ["Pillow"] },
-  { label: "OCR", items: ["PyTesseract"] },
-  { label: "Storage", items: ["AWS S3"] },
-  { label: "Database", items: ["PostgreSQL"] },
+  { label: "Framework", items: ["React 19", "Vite", "React Router"] },
+  { label: "Search", items: ["Algolia", "React InstantSearch"] },
+  { label: "State & data", items: ["Zustand", "React Query", "Axios"] },
+  { label: "Backend & auth", items: ["Firebase"] },
+  { label: "Styling", items: ["Tailwind CSS", "Material UI", "Emotion"] },
+  { label: "Quality", items: ["Vitest", "Testing Library", "ESLint", "Husky"] },
 ];
 
 const impact = [
-  "Upload an image and have it safely stored, with the original kept as the source of truth.",
-  "Get an auto-generated WebP variant to cut bandwidth on every subsequent view.",
-  "Search for text inside images to find a specific screenshot among hundreds.",
-  "Download optimized JPEG or WebP variants per use case, without re-uploading.",
+  "Typo-tolerant search finds a product from a word buried in its description.",
+  "Results are shareable by copying the URL, and the back button works as expected.",
+  "Cart totals, badge counts and quantity controls stay in sync across the app.",
+  "A regression test asserts one request per query, so the freeze cannot silently return.",
 ];
 
-export default function CapturaPage() {
+export default function HuntMartPage() {
   return (
     <div className="max-w-page mx-auto w-full px-4 py-8 md:px-8 md:py-12">
       <Link
@@ -63,31 +79,30 @@ export default function CapturaPage() {
           <h1
             className={`${lusitana.className} m-0 text-[32px] leading-tight font-medium tracking-tight lg:text-[40px]`}
           >
-            Captura
+            Hunt Mart
           </h1>
           <p className="text-muted-foreground m-0 text-base/7 lg:text-lg/7">
-            Screenshots are dead data — generic filenames, no searchability, no
-            structure. Captura turns a raw image upload into a searchable,
-            multi-format cloud asset.
+            A storefront where the hard part was never the cart — it was making
+            search fast, shareable, and impossible to hang.
           </p>
         </div>
 
         <div className="flex shrink-0 items-center gap-3">
           <a
-            href="https://captura-captures.vercel.app"
+            href="https://huntmart.netlify.app/shop"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="View the Captura live demo (opens in a new tab)"
+            aria-label="View the Hunt Mart live demo (opens in a new tab)"
             className="border-border bg-background hover:bg-muted focus-visible:outline-foreground hover:text-foreground focus-visible:ring-ring/50 inline-flex h-9 items-center gap-1.5 rounded-lg border px-3.5 text-sm font-semibold transition-colors focus-visible:ring-3 focus-visible:outline-none"
           >
             <Globe /> View project
             <ArrowUpRight className="size-4" />
           </a>
           <a
-            href="https://github.com/ekomjah/captura"
+            href="https://github.com/ekomjah/huntmart"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="View the Captura source on GitHub (opens in a new tab)"
+            aria-label="View the Hunt Mart source on GitHub (opens in a new tab)"
             className="border-border bg-background hover:bg-muted focus-visible:outline-foreground hover:text-foreground focus-visible:ring-ring/50 inline-flex h-9 items-center gap-1.5 rounded-lg border px-3.5 text-sm font-semibold transition-colors focus-visible:ring-3 focus-visible:outline-none"
           >
             <SiGithub /> Source
@@ -98,8 +113,8 @@ export default function CapturaPage() {
 
       <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
         <Image
-          src="/projects/captura/Captura.png"
-          alt="Captura's landing page, showing the search-focused hero and the three feature cards beneath it."
+          src={shots[0].src}
+          alt={shots[0].alt}
           fill
           priority
           sizes="(min-width: 1024px) 800px, 100vw"
@@ -109,35 +124,30 @@ export default function CapturaPage() {
 
       <div className="text-muted-foreground mt-16 space-y-6 *:max-w-[65ch] [&_a]:underline [&_a]:underline-offset-2">
         <div className="inline-flex items-center gap-2 font-medium">
-          <span>April - June 2026</span>
+          <span>2026</span>
           <span aria-hidden="true">·</span>
-          <span>Asset management</span>
+          <span>E-commerce</span>
         </div>
 
         <p className="m-0">
-          Built for QA engineers and developers who need to reference an error
-          log or a UI state quickly, without keeping screenshots in a folder
-          named <span className="font-medium">Screenshot 2024-11-03.png</span>.
-          Drop in an image and Captura stores the original, generates optimized
-          variants, extracts its text, and serves the lot over signed URLs.
+          Hunt Mart is a feature-rich storefront built on React and Vite, with
+          Firebase for auth and product data and Algolia for search. Browse by
+          category, search with typo tolerance, review ratings, scan a barcode,
+          and check out — with cart state that stays consistent wherever you
+          add or remove things.
+        </p>
+
+        <p className="m-0">
+          What makes it worth writing up is a performance bug that took real
+          digging. The search page froze under typing, and the cause was a
+          feedback loop rather than anything to do with Algolia being slow.
         </p>
 
         <div className="relative mt-8 aspect-[16/9] w-full overflow-hidden rounded-2xl">
           <Image
-            src="/projects/captura/dashboard.png"
-            alt="Captura's landing page, showing the search-focused hero and the three feature cards beneath it."
+            src={shots[1].src}
+            alt={shots[1].alt}
             fill
-            priority
-            sizes="(min-width: 1024px) 800px, 100vw"
-            className="object-cover object-top"
-          />
-        </div>
-        <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
-          <Image
-            src="/projects/captura/settings.png"
-            alt="Captura's landing page, showing the search-focused hero and the three feature cards beneath it."
-            fill
-            priority
             sizes="(min-width: 1024px) 800px, 100vw"
             className="object-cover object-top"
           />
@@ -153,12 +163,12 @@ export default function CapturaPage() {
             ))}
           </ul>
         </div>
+
         <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-2xl">
           <Image
-            src="/projects/captura/asset-view.png"
-            alt="Captura's landing page, showing the search-focused hero and the three feature cards beneath it."
+            src={shots[2].src}
+            alt={shots[2].alt}
             fill
-            priority
             sizes="(min-width: 1024px) 800px, 100vw"
             className="object-cover object-top"
           />
@@ -185,14 +195,16 @@ export default function CapturaPage() {
         </div>
 
         <p className="m-0">
-          One honest caveat: transcoding and OCR are currently synchronous, so a
-          large upload holds the request open for the length of both. Moving
-          that CPU-bound work to a background worker is the next step, not a
-          finished feature.
+          One security note worth repeating: nothing in a{" "}
+          <span className="font-medium">VITE_</span> variable is secret. Those
+          values are inlined into the client bundle by definition, so the Algolia
+          admin key is read by a seeding script and never by the app — data
+          protection comes from Firebase Security Rules, not from withholding
+          config.
         </p>
       </div>
 
-      <RelatedProjects current="Captura" />
+      <RelatedProjects current="Hunt Mart" />
     </div>
   );
 }
