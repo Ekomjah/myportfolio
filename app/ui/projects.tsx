@@ -16,7 +16,7 @@ const projects: Project[] = [
     name: "Captura",
     status: "completed",
     icon: <ScanSquare size={40} />,
-    image: "/projects/Captura.png",
+    image: "/projects/captura/Captura.png",
     url: "https://github.com/ekomjah/captura",
     demo: "https://captura-captures.vercel.app",
     desc: "An asset capture, search, and store SaaS",
