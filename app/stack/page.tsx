@@ -112,10 +112,7 @@ export default function Stack() {
   return (
     <main className="max-w-page mx-auto p-8 pt-4">
       <div className="group m-0 mt-8 flex w-fit items-center gap-2 text-xl font-bold">
-        <span className="group-hover:text-muted-foreground transition-colors duration-200">
-          My Stack
-        </span>
-        <ArrowRight className="shrink-0 transition-transform duration-200 group-hover:translate-x-1" />
+        My Stack
       </div>
       <h3 className="text-muted-foreground mt-2 mb-4 text-lg">
         An overview of the tools i use to craft and bring to life, my innovative
