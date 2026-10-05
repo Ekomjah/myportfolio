@@ -1,6 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, BadgeDollarSign } from "lucide-react";
+import {
+  ArrowRight,
+  BadgeDollarSign,
+  Cable,
+  CalendarClock,
+} from "lucide-react";
 
 type Project = {
   name: string;
@@ -31,11 +36,13 @@ const projects: Project[] = [
   {
     name: "dortrl",
     href: "https://github.com/ekomjah/dortrl",
+    image: <Cable size={40} className="text-muted-foreground" />,
     category: "In progress",
   },
   {
     name: "Evendar",
     href: "https://github.com/ekomjah/evendar",
+    image: <CalendarClock size={40} className="text-muted-foreground" />,
     category: "In progress",
   },
 ];
@@ -65,7 +72,7 @@ export function RelatedProjects({ current }: { current: string }) {
               rel={external ? "noopener noreferrer" : undefined}
               className="group focus-visible:outline-foreground flex flex-col gap-2.5 rounded-lg pb-3 transition-opacity duration-200 focus-visible:outline-2 focus-visible:outline-offset-4 motion-reduce:transition-none"
             >
-              <div className="bg-muted relative aspect-[3/2] overflow-hidden rounded-[10px] border">
+              <div className="group bg-muted relative aspect-[3/2] overflow-hidden rounded-[10px] border">
                 {project.image ? (
                   typeof project.image === "string" ? (
                     <Image
@@ -76,7 +83,9 @@ export function RelatedProjects({ current }: { current: string }) {
                       className="object-cover object-top transition-transform duration-300 group-hover:scale-105 motion-reduce:transition-none"
                     />
                   ) : (
-                    project.image
+                    <div className="flex h-full w-full items-center justify-center p-4 transition-transform duration-200 group-hover:scale-105">
+                      {project.image}
+                    </div>
                   )
                 ) : (
                   <span className="text-muted-foreground flex h-full w-full items-center justify-center text-sm">

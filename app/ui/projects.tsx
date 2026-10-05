@@ -38,7 +38,7 @@ const projects: Project[] = [
     status: "completed",
     icon: <ShoppingBag size={40} />,
     url: "https://github.com/ekomjah/huntmart",
-    demo: "huntmart.netlify.app/shop",
+    demo: "https://huntmart.netlify.app/shop",
     desc: "An e-commerce platform",
     detailsUrl: "/projects/huntmart",
     image: "/projects/huntmart/shop.png",
@@ -132,9 +132,20 @@ export default function Projects() {
             )}
 
             <div className="flex items-start justify-between gap-x-2">
-              <h2 className={`${inter.className} m-0 text-lg font-bold`}>
-                {project.name}
-              </h2>
+              {project.demo ? (
+                <Link
+                  className={`${inter.className} hover:decoration-muted-foreground focus-visible:outline-foreground m-0 text-lg font-bold hover:underline focus-visible:outline-2 focus-visible:outline-offset-2`}
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {project.name}
+                </Link>
+              ) : (
+                <h2 className={`${inter.className} m-0 text-lg font-bold`}>
+                  {project.name}
+                </h2>
+              )}
               {locked ? (
                 <span
                   aria-disabled="true"
