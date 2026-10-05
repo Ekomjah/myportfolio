@@ -27,7 +27,11 @@ export function useCopyEmail() {
 }
 
 export function CopyEmailIcon({ copied }: { copied: boolean }) {
-  return copied ? <Check size={16} /> : <Copy size={16} />;
+  return copied ? (
+    <Check className="size-5" />
+  ) : (
+    <Copy className="size-5" />
+  );
 }
 
 export default function CopyEmail() {

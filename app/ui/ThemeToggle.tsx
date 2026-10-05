@@ -18,8 +18,8 @@ export function useThemeToggle() {
 export function ThemeToggleIcon() {
   return (
     <>
-      <Moon className="block dark:hidden" size={18} />
-      <Sun className="hidden dark:block" size={18} />
+      <Moon className="block size-5 dark:hidden" />
+      <Sun className="hidden size-5 dark:block" />
     </>
   );
 }
