@@ -34,6 +34,16 @@ const projects: Project[] = [
     detailsUrl: "/projects/penny-wise",
   },
   {
+    name: "Huntmart",
+    status: "completed",
+    icon: <ShoppingBag size={40} />,
+    url: "https://github.com/ekomjah/huntmart",
+    demo: "huntmart.netlify.app/shop",
+    desc: "An e-commerce platform",
+    detailsUrl: "/projects/huntmart",
+    image: "/projects/huntmart/shop.png",
+  },
+  {
     name: "dortrl",
     status: "upcoming",
     icon: <Cable size={40} />,
@@ -60,6 +70,7 @@ import {
   CalendarClock,
   Lock,
   ScanSquare,
+  ShoppingBag,
 } from "lucide-react";
 import { geistSans, inter } from "./fonts";
 export default function Projects() {
@@ -101,8 +112,6 @@ export default function Projects() {
               <Link
                 className={`${MEDIA} focus-visible:outline-foreground bg-gray-200 focus-visible:outline-2 focus-visible:outline-offset-2 dark:bg-[#1c1c1c]`}
                 href={project.detailsUrl ?? project.url}
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 {project.image ? (
                   <Image
@@ -133,7 +142,9 @@ export default function Projects() {
                   className="text-muted-foreground/50 shrink-0 rounded-full border border-gray-200 p-0.5 dark:border-gray-800"
                 >
                   <SiGithub size={16} />
-                  <span className="sr-only">{project.name} is not public yet</span>
+                  <span className="sr-only">
+                    {project.name} is not public yet
+                  </span>
                 </span>
               ) : (
                 <Link
