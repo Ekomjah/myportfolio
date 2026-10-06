@@ -48,7 +48,7 @@ export default async function Post({
 
   return (
     <article className="max-w-page mx-auto w-full px-4 py-10 md:px-8 md:py-16">
-      <header className="max-w-[42rem]">
+      <header className="max-w-2xl">
         <h1
           className={`${lusitana.className} mt-4 text-[34px] leading-[1.1] tracking-tight text-balance md:text-[44px]`}
         >
