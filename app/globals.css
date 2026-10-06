@@ -138,6 +138,14 @@ body {
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
 }
 
+pre code span {
+  color: var(--shiki-light);
+}
+
+.dark pre code span {
+  color: var(--shiki-dark);
+}
+
 /* Contribution calendar tiles.
    Wide containers keep the original 12px/3px tiles untouched. Below 700px the
    tiles scale down so the year fits when it can, but never below 9px: a full
@@ -182,7 +190,8 @@ body {
   body {
     @apply bg-background text-foreground;
   }
-  button:not(:disabled), [role="button"]:not(:disabled) {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
     cursor: pointer;
   }
   html {
