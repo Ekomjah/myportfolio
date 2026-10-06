@@ -1,11 +1,10 @@
 ---
-title: "Context into the useContext React Hook"
-description: "In this note, we shall look into how the rarely used useContext hook can be utilized properly into our codebase, with some neat tricks along the way to save us 12 hours of prop drilling and give us universal control over state management"
+title: "Securely wiring auth manually with JWTs"
+description: "In this note,we will discuss and implement some security principles that help keep our apps secure from vulnerabilites like XSS scripting, SQL injection, among others"
 date: "2026-10-05"
-tags: ["tooling", "javascript", "react"]
-draft: false
-cover: 
+tags: ["tooling", "javascript", "auth"]
+draft: true
+cover: /blog/auth.jpg
 ---
-
 
 yooooo this shit sholdn't work hopefully

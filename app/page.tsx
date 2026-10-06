@@ -7,9 +7,10 @@ import Header from "./ui/Header";
 import Projects from "./ui/projects";
 import Stack from "./ui/stack";
 import Description from "./ui/desc";
-import { getSortedPostsData } from "@/lib/blog";
+import { getAllBlogs } from "@/lib/blog";
+import BlogPreview from "./ui/blog-preview";
 export default function Home() {
-  const allSortedPosts = getSortedPostsData();
+  const posts = getAllBlogs();
   return (
     <main className="max-w-page mx-auto flex min-h-full w-full flex-col items-center justify-center px-4 py-8 md:p-8">
       <Header inter={inter} lusitana={lusitana} />
@@ -44,38 +45,9 @@ export default function Home() {
         <Stack />
       </section>
 
-      <section className="w-full py-8">
-        <div className="mb-4 flex items-end justify-between gap-4">
-          <h2 className="text-xl font-bold">Blog</h2>
-        </div>
+      <BlogPreview posts={posts} limit={2} />
 
-        {/* <div className="grid gap-4">
-          <article className="border-foreground/10 bg-foreground/[0.02] rounded-xl border p-4">
-            <p className="text-foreground/60 text-[10px] font-medium tracking-[0.2em] uppercase">
-              Writing
-            </p>
-            <h3 className="mt-2 text-lg font-semibold">Coming soon</h3>
-            <p className="text-foreground/70 mt-2 text-sm">
-              I’m gathering notes, experiments, and ideas into a few short
-              posts.
-            </p>
-          </article>
-        </div> */}
-
-        <ul>
-          {allSortedPosts.map(({ slug, date, title }) => (
-            <li key={slug}>
-              {title}
-              <br />
-              {slug}
-              <br />
-              {date}
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <div className="max-w-page mx-auto mt-8 mb-6 w-[80vw] max-[580px]:w-full">
+      <div className="mx-auto mt-8 mb-6 w-full">
         <div className="mb-2 flex items-center justify-between">
           <p className="text-lg font-semibold">Github Activity</p>
           <Link
