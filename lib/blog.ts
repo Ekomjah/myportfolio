@@ -4,7 +4,7 @@ import matter from "gray-matter";
 
 const postsDirectory = path.join(process.cwd(), "contents", "blog");
 
-/** Front-matter fields present on every post, used for list views. */
+
 export interface BlogPostMeta {
   slug: string;
   title: string;

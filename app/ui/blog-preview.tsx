@@ -23,7 +23,7 @@ export default function BlogPreview({
   const shown = posts.slice(0, limit);
 
   return (
-    <section id="blog" className="w-full border-b border-foreground/10 pb-12">
+    <section id="blog" className="border-foreground/10 w-full border-b pb-12">
       <div className="mb-6 flex items-end justify-between gap-4">
         <div>
           <h2 className="m-0 mt-8 text-xl font-bold">Blog</h2>
@@ -91,13 +91,18 @@ export default function BlogPreview({
           return (
             <li key={post.slug} className="h-full">
               {locked ? (
-                <article className="bg-foreground/[0.02] flex h-full flex-col rounded-xl border border-dashed border-foreground/15 p-5">
+                <article className="bg-foreground/[0.02] border-foreground/15 flex h-full flex-col rounded-xl border border-dashed p-5">
                   {body}
-                  <span className="sr-only">This note is not available yet.</span>
+                  <span className="sr-only">
+                    This note is not available yet.
+                  </span>
                 </article>
               ) : (
                 <article className="hover:bg-foreground/[0.02] flex h-full flex-col rounded-xl border p-5 transition-colors duration-200">
-                  <Link href={`/blog/${post.slug}`} className="group flex h-full flex-col">
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="group flex h-full flex-col"
+                  >
                     {body}
                   </Link>
                 </article>
