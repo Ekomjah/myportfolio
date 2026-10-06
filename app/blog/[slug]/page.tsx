@@ -3,6 +3,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Image from "next/image";
 import { lusitana } from "@/app/ui/fonts";
+import { notFound } from "next/navigation";
 import { CalendarDays } from "lucide-react";
 
 export async function generateMetadata({
@@ -12,6 +13,7 @@ export async function generateMetadata({
 }) {
   const { slug } = await params;
   const post = await getBlogBySlug(slug);
+  if (!post) return {};
   return {
     title: post.title,
     description: post.description,
@@ -40,6 +42,7 @@ export default async function Post({
 }) {
   const { slug } = await params;
   const post = await getBlogBySlug(slug);
+  if (!post) notFound();
 
   return (
     <article className="max-w-page mx-auto w-full px-4 py-10 md:px-8 md:py-16">

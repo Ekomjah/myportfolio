@@ -4,7 +4,6 @@ import matter from "gray-matter";
 
 const postsDirectory = path.join(process.cwd(), "contents", "blog");
 
-
 export interface BlogPostMeta {
   slug: string;
   title: string;
@@ -21,7 +20,9 @@ export interface BlogPost extends BlogPostMeta {
 }
 
 export function getAllBlogs(): BlogPostMeta[] {
-  const fileNames = fs.readdirSync(postsDirectory);
+  const fileNames = fs
+    .readdirSync(postsDirectory)
+    .filter((f) => f.endsWith(".md"));
 
   const posts = fileNames.map((fileName): BlogPostMeta => {
     const slug = fileName.replace(/\.md$/, "");
@@ -36,15 +37,9 @@ export function getAllBlogs(): BlogPostMeta[] {
   );
 }
 
-export function getAllBlogSlugs() {
-  return fs
-    .readdirSync(postsDirectory)
-    .filter((f) => f.endsWith(".md"))
-    .map((fileName) => ({ slug: fileName.replace(/\.md$/, "") }));
-}
-
-export function getBlogBySlug(slug: string): BlogPost {
+export function getBlogBySlug(slug: string): BlogPost | null {
   const fullPath = path.join(postsDirectory, `${slug}.md`);
+  if (!fs.existsSync(fullPath)) return null;
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
