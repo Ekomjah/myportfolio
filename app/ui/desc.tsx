@@ -72,10 +72,6 @@ export default function Description() {
         >
           <Navigation size={18} className="shrink-0" />
           <span>View my Resumé</span>
-          <ArrowUpRight
-            size={15}
-            className="shrink-0 opacity-50 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transition-none"
-          />
         </Link>
       </div>
     </section>
